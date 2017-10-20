@@ -1,2 +1,5 @@
-# DominosPizzaApp
-2017 CS 180 project
+# Android Studio Sample Projects
+
+## Android Studio Version
+
+* Android Studio 2.2.3
