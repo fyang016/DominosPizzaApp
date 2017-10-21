@@ -11,5 +11,5 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="testing testing World!" />
+        android:text="Bye!" />
 </RelativeLayout>
