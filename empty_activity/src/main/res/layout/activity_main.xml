@@ -11,5 +11,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bye!" />
+        android:text="@string/app_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:id="@+id/text1" />
+
+    <Button
+        android:text="@string/button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginBottom="74dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick" />
 </RelativeLayout>

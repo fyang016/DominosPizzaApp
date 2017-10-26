@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Empty Activity</string>
+    <string name="app_name">Dominos Pizza</string>
+    <string name="app_content">This application will be counting button clicks</string>
+    <string name="button_text">Click me!</string>
 </resources>
