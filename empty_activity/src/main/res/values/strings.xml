@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Dominos Pizza</string>
+    <string name="DominosPizzaApp">DominosPizzaApp</string>
     <string name="app_content">This application will be counting button clicks</string>
     <string name="button_text">Click me!</string>
     <string name="title_activity_create_account">CreateAccount</string>
