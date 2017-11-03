@@ -4,4 +4,5 @@
     <string name="app_content">This application will be counting button clicks</string>
     <string name="button_text">Click me!</string>
     <string name="title_activity_create_account">CreateAccount</string>
+    <string name="order_pizza">Order pizza here.</string>
 </resources>

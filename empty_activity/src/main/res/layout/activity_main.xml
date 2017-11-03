@@ -8,15 +8,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.os.operando.emptyactivity.MainActivity">
 
-    <TextView
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_content"
+        android:id="@+id/image_button_android"
         android:layout_centerVertical="true"
+        android:src="@drawable/delivery_home"
         android:layout_centerHorizontal="true"
-        android:textSize="30sp"
-        android:textAlignment="center"
-        android:id="@+id/text1" />
+        android:contentDescription="@string/DominosPizzaApp" />
 
     <Button
         android:text="@string/button_text"
@@ -37,4 +36,15 @@
         android:layout_marginBottom="13dp"
         android:text="Create Account"
         android:onClick = "gotoca" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_content"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:id="@+id/text1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
