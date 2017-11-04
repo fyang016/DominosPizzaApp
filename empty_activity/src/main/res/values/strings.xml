@@ -4,5 +4,39 @@
     <string name="app_content">This application will be counting button clicks</string>
     <string name="button_text">Click me!</string>
     <string name="title_activity_create_account">CreateAccount</string>
+
+    <!-- Main Menu -->
     <string name="order_pizza">Order pizza here.</string>
+    <string name="delivery_or_carryout">Is this order for delivery or carryout?</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="gift_cards">BUY GIFT CARDS</string>
+
+    <!-- Orders -->
+    <string name="recent_orders">Your Recent Orders</string>
+    <string name="cash">Cash</string>
+    <string name="credit">Credit</string>
+    <string name="choose_drink">Choose Your Drink</string>
+    <string name="add_beverage">Add a refreshing beverage to your order?</string>
+    <string name="coke">Coke</string>
+    <string name="diet_coke">Diet Coke</string>
+    <string name="sprite">Sprite</string>
+    <string name="fanta_orange">Fanta Orange</string>
+    <string name="food_beverage">Food &amp; Beverage: </string>
+    <string name="delivery">Delivery: </string>
+    <string name="taxes">Taxes: </string>
+    <string name="total">Total: </string>
+
+    <!-- Checkout Screen -->
+    <string name="pay_with_cash">Pay With Cash Upon Delivery</string>
+    <string name="pay_with_credit">Pay Now With Debit or Credit Card</string>
+    <string name="ez_order">Save this order as your Easy Order</string>
+    <string name="delivery_advice">Any Delivery Charge is not a tip paid to your driver. Please reward your driver for awesomeness. Our drivers carry less than $20.</string>
+    <string name="terms_of_use_advisory">By placing your order you agree to our Terms of Use and that you are at least 13 years old.</string>
+    <string name="secure_lock">Secure Transaction</string>
+
+    <!-- Sales Tax is 8.75% -->
+
+    <!-- After Checkout -->
+
+
 </resources>
