@@ -18,14 +18,14 @@
         android:contentDescription="@string/DominosPizzaApp" />
 
     <Button
-        android:text="@string/button_text"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_marginBottom="74dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/image_button_android"
         android:layout_centerHorizontal="true"
-        android:onClick="onClick" />
+        android:layout_marginTop="47dp"
+        android:onClick="onClick"
+        android:text="@string/button_text" />
 
     <Button
         android:id="@+id/button2"
@@ -41,11 +41,11 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="13dp"
-        android:text="Topping Selection"
-        android:onClick = "gotots" />
+        android:layout_marginTop="13dp"
+        android:onClick="gotots"
+        android:text="Topping Selection" />
 
     <TextView
         android:layout_width="wrap_content"
