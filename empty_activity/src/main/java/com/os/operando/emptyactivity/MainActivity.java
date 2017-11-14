@@ -42,4 +42,9 @@ public class MainActivity extends Activity {
     {
         startActivity(new Intent(getApplicationContext(),CreateAccount.class));
     }
+
+    public void gotots(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
+    }
 }
