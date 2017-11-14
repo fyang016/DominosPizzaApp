@@ -22,10 +22,6 @@ public class CreateAccount extends AppCompatActivity {
     {
         startActivity(new Intent(getApplicationContext(),CreateAccount.class));
     }
-    public void gotomain(View view)
-    {
-        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-    }
     public void onCreateClick(View view)
     {
 
@@ -66,9 +62,7 @@ public class CreateAccount extends AppCompatActivity {
                 databasehelp.addUsers(account);
                 Toast mail = Toast.makeText(CreateAccount.this,"BOO", Toast.LENGTH_SHORT);
                 mail.show();
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 databasehelp.allUsers();
-
             }
 
 
