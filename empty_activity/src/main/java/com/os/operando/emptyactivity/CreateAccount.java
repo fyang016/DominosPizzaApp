@@ -66,11 +66,13 @@ public class CreateAccount extends AppCompatActivity {
                 databasehelp.addUsers(account);
                 Toast mail = Toast.makeText(CreateAccount.this,"BOO", Toast.LENGTH_SHORT);
                 mail.show();
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 databasehelp.allUsers();
 
+                Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+                startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getApplicationContext().startActivity(startIntent);
+                //startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
-
 
 
     }
