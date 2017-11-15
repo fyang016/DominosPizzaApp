@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
+        /*
         androidImageButton = (ImageButton) findViewById(R.id.image_button_android);
 
         androidImageButton.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +32,7 @@ public class MainActivity extends Activity {
                 startActivity(intentLoadNewActivity);
             }
         });
+        */
     }
 
     public void onClick(View view) {

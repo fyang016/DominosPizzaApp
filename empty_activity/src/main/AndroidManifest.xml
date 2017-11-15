@@ -22,24 +22,20 @@
             android:name=".CreateAccount"
             android:label="@string/title_activity_create_account"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".OrderPizza" />
         <activity android:name=".preCheckout" />
         <activity android:name=".Coupons" />
         <activity android:name=".RecentOrders" />
-        <activity android:name=".SignIn2"></activity>
-
+        <activity android:name=".SignIn2" />
         <activity
             android:name=".ToppingChoice"
             android:label="ToppingChoice"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".OrderDetail"
             android:label="OrderDetail"
             android:theme="@style/AppTheme.NoActionBar" />
-
-
+        <activity android:name=".Location"></activity>
     </application>
 
 </manifest>
