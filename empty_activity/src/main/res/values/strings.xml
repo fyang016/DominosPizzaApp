@@ -10,6 +10,7 @@
     <string name="delivery_or_carryout">Is this order for delivery or carryout?</string>
     <string name="welcome_back">Welcome back!</string>
     <string name="gift_cards">BUY GIFT CARDS</string>
+    <string name="sign_in">SIGN IN</string>
 
     <!-- Orders -->
     <string name="recent_orders">Your Recent Orders</string>
@@ -17,10 +18,10 @@
     <string name="credit">Credit</string>
     <string name="choose_drink">Choose Your Drink</string>
     <string name="add_beverage">Add a refreshing beverage to your order?</string>
-    <string name="coke">Coke</string>
-    <string name="diet_coke">Diet Coke</string>
-    <string name="sprite">Sprite</string>
-    <string name="fanta_orange">Fanta Orange</string>
+    <string name="drink_coke">Coke</string>
+    <string name="drink_diet_coke">Diet Coke</string>
+    <string name="drink_sprite">Sprite</string>
+    <string name="drink_fanta_orange">Fanta Orange</string>
     <string name="food_beverage">Food &amp; Beverage: </string>
     <string name="delivery">Delivery: </string>
     <string name="taxes">Taxes: </string>
@@ -39,5 +40,8 @@
 
     <!-- After Checkout -->
 
+    <!-- Button Descriptions -->
+    <string name="description_delivery">Makes you enter your address.</string>
+    <string name="description_carryout">Makes you choose a store location.</string>
 
 </resources>
