@@ -13,9 +13,12 @@
         android:id="@+id/image_button_android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="90dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="78dp"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:layout_toRightOf="@+id/imageButton4"
         android:contentDescription="@string/DominosPizzaApp"
         android:src="@drawable/delivery_home" />
 
@@ -36,9 +39,10 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button2"
+        android:layout_marginBottom="177dp"
         android:onClick="gotots"
         android:text="Topping Selection" />
 

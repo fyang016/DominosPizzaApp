@@ -25,6 +25,12 @@ public class DatabaseHelp extends SQLiteOpenHelper {
     private static final String CREATE_USERS_TABLE = "CREATE TABLE Users(Email TEXT Primary Key NOT NULL" +
             ", Password TEXT NOT NULL, FirstName TEXT NOT NULL, LastName TEXT NOT NULL," +
             " PhoneNumber TEXT NOT NULL); ";
+
+    private static final String TABLE_ORDERS = "Orders";
+    private static final String KEY_FAVORDERS = "FavoriteOrder";
+    private static final String KEY_COST = "Cost";
+    private static final String CREATE_FAVORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS +" (" + KEY_EMAIL +
+            " TEXT FOREIGN KEY NOT NULL, " + KEY_FAVORDERS + "TEXT ," + KEY_COST + " INT);";
     SQLiteDatabase udbs;
 
     public DatabaseHelp(Context context)
@@ -34,12 +40,14 @@ public class DatabaseHelp extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase udbs) {
         udbs.execSQL(CREATE_USERS_TABLE);
+        udbs.execSQL(CREATE_FAVORDERS_TABLE);
         this.udbs = udbs;
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase udbs, int i, int i1) {
-        udbs.execSQL("DROP TABLE IF EXISTS" + TABLE_USERS);
+        String drop = "DROP TABLE IF EXISTS" + TABLE_USERS;
+        udbs.execSQL(drop);
         this.onCreate(udbs);
 
     }
