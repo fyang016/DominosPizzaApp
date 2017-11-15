@@ -44,8 +44,8 @@
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"
-        android:onClick="gotots"
-        android:text="Topping Selection" />
+        android:onClick="gototc"
+        android:text="Topping Choice" />
 
     <TextView
         android:layout_width="wrap_content"
