@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
         TextView txt = (TextView) findViewById(R.id.text1);
         txt.setText("You tapped " + count + " time(s).");
     }
+    */
     public void gotoca(View view)
     {
         startActivity(new Intent(getApplicationContext(),SignIn2.class));
@@ -54,5 +55,4 @@ public class MainActivity extends Activity {
     {
         startActivity(new Intent(getApplicationContext(),RecentOrders.class));
     }
-    */
 }
