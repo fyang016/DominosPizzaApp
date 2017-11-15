@@ -67,6 +67,10 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         udbs.close();
     }
 
+    void addRecentOrders(RecentOrdersInfo recentOrdersInfo)
+    {
+        udbs.
+    }
     public LoginInfo readUsers()
     {
         udbs = this.getReadableDatabase();
