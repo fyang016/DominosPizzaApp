@@ -43,9 +43,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="41dp"
-        android:onClick="gotots"
-        android:text="Topping Selection" />
+
+        android:layout_marginTop="13dp"
+        android:onClick="gototc"
+        android:text="Topping Choice" />
+
 
     <TextView
         android:id="@+id/text1"

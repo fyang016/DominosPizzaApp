@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
         startActivity(new Intent(getApplicationContext(),SignIn2.class));
     }
 
-    public void gotots(View view)
+    public void gototc(View view)
     {
         startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
     }
