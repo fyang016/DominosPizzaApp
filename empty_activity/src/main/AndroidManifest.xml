@@ -17,12 +17,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".CreateAccount"
             android:label="@string/title_activity_create_account"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".OrderPizza"></activity>
+        <activity android:name=".OrderPizza" />
+        <activity android:name=".preCheckout" />
+        <activity android:name=".Coupons"></activity>
     </application>
 
 </manifest>
