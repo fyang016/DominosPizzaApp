@@ -1,6 +1,7 @@
 package com.os.operando.emptyactivity;
 
 import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -8,11 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
-
 
 public class ToppingChoice extends AppCompatActivity {
-
     EditText txtSauce, txtQuantity, txtCheese, txtPepperoni, txtSausage, txtBeef,
             txtSteak, txtHam, txtBacon, txtSalami, txtChicken, txtCheddar, txtFeta,
             txtParmesan, txtProvolone, txtBanana, txtOlives, txtGreen, txtJalapeno,
@@ -788,7 +786,7 @@ public class ToppingChoice extends AppCompatActivity {
         //Plus
         txtOnions = (EditText)findViewById(R.id.textOnion2);
         txtOnions.setText(String.valueOf(density[onionDensity]));
-        btnOnions = (Button)findViewById(R.id.plusO);
+        btnOnions = (Button)findViewById(R.id.plus22);
 
         btnOnions.setOnClickListener(new OnClickListener() {
                                          public void onClick(View arg0) {
@@ -803,7 +801,7 @@ public class ToppingChoice extends AppCompatActivity {
         //Minus
         txtOnions = (EditText)findViewById(R.id.textOnion2);
         txtOnions.setText(String.valueOf(density[onionDensity]));
-        btnOnions = (Button)findViewById(R.id.minusO);
+        btnOnions = (Button)findViewById(R.id.minus22);
 
         btnOnions.setOnClickListener(new OnClickListener() {
                                          public void onClick(View arg0) {
@@ -947,19 +945,14 @@ public class ToppingChoice extends AppCompatActivity {
 
 
 
-        // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
+    }
+    public void gototc(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
-
-    // Used to load the 'native-lib' library on application startup.
-    static {
-        System.loadLibrary("native-lib");
+    public void gotood(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),OrderDetail.class));
     }
 }
