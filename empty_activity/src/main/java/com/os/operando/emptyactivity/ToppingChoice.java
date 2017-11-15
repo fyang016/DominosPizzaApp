@@ -9,10 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
-/**
- * Created by Se Hoon Bang on 11/14/2017.
- */
 
 public class ToppingChoice extends AppCompatActivity {
     EditText txtSauce, txtQuantity, txtCheese, txtPepperoni, txtSausage, txtBeef,
@@ -950,16 +946,9 @@ public class ToppingChoice extends AppCompatActivity {
 
 
     }
-    public void gotots(View view)
+    public void gototc(View view)
     {
         startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
     }
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    // Used to load the 'native-lib' library on application startup.
-    static {
-        System.loadLibrary("native-lib");
-    }
+
 }
