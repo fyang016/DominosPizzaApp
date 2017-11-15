@@ -25,6 +25,13 @@ public class DatabaseHelp extends SQLiteOpenHelper {
     private static final String CREATE_USERS_TABLE = "CREATE TABLE Users(Email TEXT Primary Key NOT NULL" +
             ", Password TEXT NOT NULL, FirstName TEXT NOT NULL, LastName TEXT NOT NULL," +
             " PhoneNumber TEXT NOT NULL); ";
+
+    private static final String TABLE_ORDERS = "Orders";
+    private static final String KEY_FAVORDERS = "FavoriteOrder";
+    private static final String KEY_COST = "Cost";
+    private static final String KEY_TIME = "OrderTime ";
+    private static final String CREATE_FAVORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS +" (" + KEY_EMAIL +
+            " TEXT FOREIGN KEY NOT NULL, " + KEY_FAVORDERS + "TEXT ," + KEY_COST + " INT, "+ KEY_TIME + " TIME);";
     SQLiteDatabase udbs;
 
     public DatabaseHelp(Context context)
@@ -34,12 +41,14 @@ public class DatabaseHelp extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase udbs) {
         udbs.execSQL(CREATE_USERS_TABLE);
+        udbs.execSQL(CREATE_FAVORDERS_TABLE);
         this.udbs = udbs;
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase udbs, int i, int i1) {
-        udbs.execSQL("DROP TABLE IF EXISTS" + TABLE_USERS);
+        String drop = "DROP TABLE IF EXISTS" + TABLE_USERS;
+        udbs.execSQL(drop);
         this.onCreate(udbs);
 
     }
@@ -59,6 +68,19 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         udbs.close();
     }
 
+    void addRecentOrders(RecentOrdersInfo recentOrdersInfo,LoginInfo logininfo)
+    {
+        udbs = this.getWritableDatabase();
+
+        ContentValues val = new ContentValues();
+        val.put(KEY_EMAIL,logininfo.getEmail());
+        val.put(KEY_FAVORDERS,recentOrdersInfo.getFavoriteOrder());
+        val.put(KEY_COST,recentOrdersInfo.getCost());
+        val.put(KEY_TIME, String.valueOf(recentOrdersInfo.getOrdertime()));
+
+        udbs.insert(TABLE_ORDERS,null,val);
+        udbs.close();
+    }
     public LoginInfo readUsers()
     {
         udbs = this.getReadableDatabase();
@@ -100,7 +122,43 @@ public class DatabaseHelp extends SQLiteOpenHelper {
 
         }
         return loginInfoList;
-    }/*
+    }
+
+    //RC created to check password
+    public String searchPass(String email)
+    {
+
+        udbs = this.getReadableDatabase();
+        String query = "select email, password from "+TABLE_USERS;
+        Cursor cursor = udbs.rawQuery(query, null);
+        //e - for email p - password
+        String e, p;
+        p = "Password Not Found";
+        if (cursor.moveToFirst())
+        {
+            do{
+                e = cursor.getString(0);
+                p = cursor.getString(1);
+
+                if (e.equals(email))
+                {
+
+                    p = cursor.getString(1);
+                    break;
+                }
+
+
+            }
+            while(cursor.moveToNext());
+        }
+
+        return p;
+
+    }
+    /*
+
+
+
     public int updatedUser(LoginInfo logininfo)
     {
         SQLiteDatabase dbs = this.getWritableDatabase();

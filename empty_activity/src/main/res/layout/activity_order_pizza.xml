@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_order_pizza"
     android:layout_width="match_parent"
@@ -23,14 +24,33 @@
         android:layout_marginStart="40dp" />
 
     <ImageButton
+        android:id="@+id/coupon_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/coupon_button"
-        android:src="@drawable/coupons_button"
-        android:layout_marginTop="22dp"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="21dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/coupons_button" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coupon_button"
+        android:layout_marginTop="33dp"
+        app:srcCompat="@drawable/menu_button" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_below="@+id/imageButton"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/pizza_with_star" />
 </RelativeLayout>

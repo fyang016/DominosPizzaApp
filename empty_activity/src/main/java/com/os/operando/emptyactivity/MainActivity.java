@@ -40,11 +40,15 @@ public class MainActivity extends Activity {
     }
     public void gotoca(View view)
     {
-        startActivity(new Intent(getApplicationContext(),CreateAccount.class));
+        startActivity(new Intent(getApplicationContext(),SignIn.class));
     }
 
     public void gototc(View view)
     {
         startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
+    }
+    public void gotoro(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),RecentOrders.class));
     }
 }
