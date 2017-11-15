@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
         */
     }
 
+    /*
     public void onClick(View view) {
         count++;
         TextView txt = (TextView) findViewById(R.id.text1);
@@ -53,4 +54,5 @@ public class MainActivity extends Activity {
     {
         startActivity(new Intent(getApplicationContext(),RecentOrders.class));
     }
+    */
 }
