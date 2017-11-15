@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 public class SignIn extends AppCompatActivity {
 
+    DatabaseHelp help = new DatabaseHelp(this);
+
     private EditText Email;
     private EditText Password;
     private TextView Header;
@@ -52,18 +54,31 @@ public class SignIn extends AppCompatActivity {
         });
     }
     private void validate(String userEmail, String userPassword){
-        if((userEmail == "Admin") && (userPassword == "1234")) {
+        /*
+        check user name and password
+        if((userEmail == "Admin") && (userPassword == "1234"))
+        pass the username
+        */
+
+        String password = help.searchPass(userEmail);
+
+        if(userPassword.equals(password))
+        {
             Intent intent = new Intent(this, OrderPizza.class);
             startActivity(intent);
-        }else
+
+        }
+
+        else
+        {
             counter--;
             Info.setText("No of attmepts reamaing: " + String.valueOf(counter));
-            if(counter == 0){
+            if (counter == 0) {
                 SignIn.setEnabled(false);
 
 
             }
-
+        }
 
 
     }

@@ -112,7 +112,43 @@ public class DatabaseHelp extends SQLiteOpenHelper {
 
         }
         return loginInfoList;
-    }/*
+    }
+
+    //RC created to check password
+    public String searchPass(String email)
+    {
+
+        udbs = this.getReadableDatabase();
+        String query = "select email, password from "+TABLE_USERS;
+        Cursor cursor = udbs.rawQuery(query, null);
+        //e - for email p - password
+        String e, p;
+        p = "Password Not Found";
+        if (cursor.moveToFirst())
+        {
+            do{
+                e = cursor.getString(0);
+                p = cursor.getString(1);
+
+                if (e.equals(email))
+                {
+
+                    p = cursor.getString(1);
+                    break;
+                }
+
+
+            }
+            while(cursor.moveToNext());
+        }
+
+        return p;
+
+    }
+    /*
+
+
+
     public int updatedUser(LoginInfo logininfo)
     {
         SQLiteDatabase dbs = this.getWritableDatabase();
