@@ -69,7 +69,7 @@ public class DatabaseHelp extends SQLiteOpenHelper {
 
     void addRecentOrders(RecentOrdersInfo recentOrdersInfo)
     {
-        udbs.
+        
     }
     public LoginInfo readUsers()
     {
