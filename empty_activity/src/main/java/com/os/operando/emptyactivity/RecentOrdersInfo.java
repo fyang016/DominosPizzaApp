@@ -1,8 +1,11 @@
 package com.os.operando.emptyactivity;
 
+import java.sql.Time;
+
 public class RecentOrdersInfo {
     String favoriteOrder;
     Integer cost;
+    Time ordertime;
 
     public RecentOrdersInfo()
     {}
@@ -11,7 +14,16 @@ public class RecentOrdersInfo {
     {
         this.favoriteOrder = favoriteOrder;
         this.cost = cost;
+        this.ordertime = ordertime;
 
+    }
+
+    public Time getOrdertime() {
+        return ordertime;
+    }
+
+    public void setOrdertime(Time ordertime) {
+        this.ordertime = ordertime;
     }
 
     public String getFavoriteOrder() {
