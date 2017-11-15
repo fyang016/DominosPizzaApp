@@ -29,8 +29,9 @@ public class DatabaseHelp extends SQLiteOpenHelper {
     private static final String TABLE_ORDERS = "Orders";
     private static final String KEY_FAVORDERS = "FavoriteOrder";
     private static final String KEY_COST = "Cost";
+    private static final String KEY_TIME = "OrderTime ";
     private static final String CREATE_FAVORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS +" (" + KEY_EMAIL +
-            " TEXT FOREIGN KEY NOT NULL, " + KEY_FAVORDERS + "TEXT ," + KEY_COST + " INT);";
+            " TEXT FOREIGN KEY NOT NULL, " + KEY_FAVORDERS + "TEXT ," + KEY_COST + " INT, "+ KEY_TIME + " TIME);";
     SQLiteDatabase udbs;
 
     public DatabaseHelp(Context context)
@@ -67,9 +68,18 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         udbs.close();
     }
 
-    void addRecentOrders(RecentOrdersInfo recentOrdersInfo)
+    void addRecentOrders(RecentOrdersInfo recentOrdersInfo,LoginInfo logininfo)
     {
+        udbs = this.getWritableDatabase();
 
+        ContentValues val = new ContentValues();
+        val.put(KEY_EMAIL,logininfo.getEmail());
+        val.put(KEY_FAVORDERS,recentOrdersInfo.getFavoriteOrder());
+        val.put(KEY_COST,recentOrdersInfo.getCost());
+        val.put(KEY_TIME, String.valueOf(recentOrdersInfo.getOrdertime()));
+
+        udbs.insert(TABLE_ORDERS,null,val);
+        udbs.close();
     }
     public LoginInfo readUsers()
     {
