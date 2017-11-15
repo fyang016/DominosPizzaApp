@@ -39,7 +39,6 @@
 
     <!-- After Checkout -->
 
-
     <!-- Button Descriptions -->
     <string name="description_delivery">Makes you enter your address.</string>
     <string name="description_carryout">Makes you choose a store location.</string>

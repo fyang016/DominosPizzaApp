@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_topping_choice"
+    tools:context="com.os.operando.emptyactivity.ToppingChoice">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/sample_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Quantity"
+                app:layout_constraintTop_toBottomOf="@+id/spinner1"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="365dp"
+                android:layout_height="75dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.526"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/minus1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_text" />
+
+            <Button
+                android:id="@+id/plus1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="29dp"
+                android:layout_marginRight="29dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/editText1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_text" />
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/minus1"
+                app:layout_constraintRight_toLeftOf="@+id/plus1"
+                app:layout_constraintTop_toBottomOf="@+id/sample_text" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~  SAUCE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textSauce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Sauce"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/minus1"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textSauce2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus2"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSauce" />
+
+            <Button
+                android:id="@+id/minus2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSauce" />
+
+            <Button
+                android:id="@+id/plus2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="4dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textSauce2"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSauce" />
+
+            <Spinner
+                android:id="@+id/spinnerSauce"
+                android:layout_width="344dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toBottomOf="@+id/textSauce"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~  Cheese ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textCheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cheese"
+                app:layout_constraintTop_toBottomOf="@+id/minus2"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textCheese2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus3"
+                app:layout_constraintTop_toBottomOf="@+id/textCheese" />
+
+            <Button
+                android:id="@+id/minus3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textCheese" />
+
+            <Button
+                android:id="@+id/plus3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textCheese2"
+                app:layout_constraintTop_toBottomOf="@+id/textCheese" />
+            <!-- ~~~~~~~~~~~~~~~~~~~Pepperoni ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textPepperoni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pepperoni"
+                app:layout_constraintTop_toBottomOf="@+id/minus3"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textPepperoni2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus4"
+                app:layout_constraintTop_toBottomOf="@+id/textPepperoni" />
+
+            <Button
+                android:id="@+id/minus4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textPepperoni" />
+
+            <Button
+                android:id="@+id/plus4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textPepperoni2"
+                app:layout_constraintTop_toBottomOf="@+id/textPepperoni" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Italian Sausage ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textSausage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Italian Sausage"
+                app:layout_constraintTop_toBottomOf="@+id/minus4"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textSausage2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus5"
+                app:layout_constraintTop_toBottomOf="@+id/textSausage" />
+
+            <Button
+                android:id="@+id/minus5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textSausage" />
+
+            <Button
+                android:id="@+id/plus5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textSausage2"
+                app:layout_constraintTop_toBottomOf="@+id/textSausage" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Beef ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textBeef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beef"
+                app:layout_constraintTop_toBottomOf="@+id/minus5"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textBeef2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus6"
+                app:layout_constraintTop_toBottomOf="@+id/textBeef" />
+
+            <Button
+                android:id="@+id/minus6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textBeef" />
+
+            <Button
+                android:id="@+id/plus6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textBeef2"
+                app:layout_constraintTop_toBottomOf="@+id/textBeef" />
+            <!-- ~~~~~~~~~~~~~~~~~~~Philly Steak ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textSteak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Philly Steak"
+                app:layout_constraintTop_toBottomOf="@+id/minus6"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textSteak2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus7"
+                app:layout_constraintTop_toBottomOf="@+id/textSteak" />
+
+            <Button
+                android:id="@+id/minus7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textSteak" />
+
+            <Button
+                android:id="@+id/plus7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textSteak2"
+                app:layout_constraintTop_toBottomOf="@+id/textSteak" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Ham ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textHam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ham"
+                app:layout_constraintTop_toBottomOf="@+id/minus7"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textHam2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus8"
+                app:layout_constraintTop_toBottomOf="@+id/textHam" />
+
+            <Button
+                android:id="@+id/minus8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textHam" />
+
+            <Button
+                android:id="@+id/plus8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textHam2"
+                app:layout_constraintTop_toBottomOf="@+id/textHam" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Bacon ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textBacon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bacon"
+                app:layout_constraintTop_toBottomOf="@+id/minus8"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textBacon2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus9"
+                app:layout_constraintTop_toBottomOf="@+id/textBacon" />
+
+            <Button
+                android:id="@+id/minus9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textBacon" />
+
+            <Button
+                android:id="@+id/plus9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textBacon2"
+                app:layout_constraintTop_toBottomOf="@+id/textBacon" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Salami ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textSalami"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salami"
+                app:layout_constraintTop_toBottomOf="@+id/minus9"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textSalami2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus10"
+                app:layout_constraintTop_toBottomOf="@+id/textSalami" />
+
+            <Button
+                android:id="@+id/minus10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textSalami" />
+
+            <Button
+                android:id="@+id/plus10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textSalami2"
+                app:layout_constraintTop_toBottomOf="@+id/textSalami" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Premium Chicken ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/textChicken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Premium Chicken"
+                app:layout_constraintTop_toBottomOf="@+id/minus10"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textChicken2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus11"
+                app:layout_constraintTop_toBottomOf="@+id/textChicken" />
+
+            <Button
+                android:id="@+id/minus11"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textChicken" />
+
+            <Button
+                android:id="@+id/plus11"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textChicken2"
+                app:layout_constraintTop_toBottomOf="@+id/textChicken" />
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Cheddar Cheese~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textCheddar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cheddar Cheese"
+                app:layout_constraintTop_toBottomOf="@+id/minus11"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textCheddar2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus12"
+                app:layout_constraintTop_toBottomOf="@+id/textCheddar" />
+
+            <Button
+                android:id="@+id/minus12"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textCheddar" />
+
+            <Button
+                android:id="@+id/plus12"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textCheddar2"
+                app:layout_constraintTop_toBottomOf="@+id/textCheddar" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Feta Cheese~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textFeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feta Cheese"
+                app:layout_constraintTop_toBottomOf="@+id/minus12"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textFeta2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus13"
+                app:layout_constraintTop_toBottomOf="@+id/textFeta" />
+
+            <Button
+                android:id="@+id/minus13"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textFeta" />
+
+            <Button
+                android:id="@+id/plus13"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textFeta2"
+                app:layout_constraintTop_toBottomOf="@+id/textFeta" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Shredded Parmesan Asiago~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textParmesan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shredded Parmesan Asiago"
+                app:layout_constraintTop_toBottomOf="@+id/minus13"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textParmesan2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus14"
+                app:layout_constraintTop_toBottomOf="@+id/textParmesan" />
+
+            <Button
+                android:id="@+id/minus14"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textParmesan" />
+
+            <Button
+                android:id="@+id/plus14"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textParmesan2"
+                app:layout_constraintTop_toBottomOf="@+id/textParmesan" />
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Shredded Provolone Cheese~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textProvolone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shredded Provolone Cheese"
+                app:layout_constraintTop_toBottomOf="@+id/minus14"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textProvolone2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus15"
+                app:layout_constraintTop_toBottomOf="@+id/textProvolone" />
+
+            <Button
+                android:id="@+id/minus15"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textProvolone" />
+
+            <Button
+                android:id="@+id/plus15"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textProvolone2"
+                app:layout_constraintTop_toBottomOf="@+id/textProvolone" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Banana Pepper~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textBanana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Banana Pepper"
+                app:layout_constraintTop_toBottomOf="@+id/minus15"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textBanana2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus16"
+                app:layout_constraintTop_toBottomOf="@+id/textBanana" />
+
+            <Button
+                android:id="@+id/minus16"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textBanana" />
+
+            <Button
+                android:id="@+id/plus16"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textBanana2"
+                app:layout_constraintTop_toBottomOf="@+id/textBanana" />
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Black Olives~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textOlives"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Black Olives"
+                app:layout_constraintTop_toBottomOf="@+id/minus16"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textOlives2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus17"
+                app:layout_constraintTop_toBottomOf="@+id/textOlives" />
+
+            <Button
+                android:id="@+id/minus17"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textOlives" />
+
+            <Button
+                android:id="@+id/plus17"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textOlives2"
+                app:layout_constraintTop_toBottomOf="@+id/textOlives" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Green Peppers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Green Peppers"
+                app:layout_constraintTop_toBottomOf="@+id/minus17"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textGreen2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus18"
+                app:layout_constraintTop_toBottomOf="@+id/textGreen" />
+
+            <Button
+                android:id="@+id/minus18"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textGreen" />
+
+            <Button
+                android:id="@+id/plus18"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textGreen2"
+                app:layout_constraintTop_toBottomOf="@+id/textGreen" />
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Jalapeno Peppers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textJalapeno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jalapeno Peppers"
+                app:layout_constraintTop_toBottomOf="@+id/minus18"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textJalapeno2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus19"
+                app:layout_constraintTop_toBottomOf="@+id/textJalapeno" />
+
+            <Button
+                android:id="@+id/minus19"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textJalapeno" />
+
+            <Button
+                android:id="@+id/plus19"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textJalapeno2"
+                app:layout_constraintTop_toBottomOf="@+id/textJalapeno" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~    s~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textMushrooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mushrooms"
+                app:layout_constraintTop_toBottomOf="@+id/minus19"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textMushrooms2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus20"
+                app:layout_constraintTop_toBottomOf="@+id/textMushrooms" />
+
+            <Button
+                android:id="@+id/minus20"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textMushrooms" />
+
+            <Button
+                android:id="@+id/plus20"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textMushrooms2"
+                app:layout_constraintTop_toBottomOf="@+id/textMushrooms" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Pineapple~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textPineapple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pineapple"
+                app:layout_constraintTop_toBottomOf="@+id/minus20"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textPineapple2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus21"
+                app:layout_constraintTop_toBottomOf="@+id/textPineapple" />
+
+            <Button
+                android:id="@+id/minus21"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textPineapple" />
+
+            <Button
+                android:id="@+id/plus21"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textPineapple2"
+                app:layout_constraintTop_toBottomOf="@+id/textPineapple" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Onion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textOnion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Onion"
+                app:layout_constraintTop_toBottomOf="@+id/minus21"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textOnion2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minusO"
+                app:layout_constraintTop_toBottomOf="@+id/textOnion" />
+
+            <Button
+                android:id="@+id/minusO"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textOnion" />
+
+            <Button
+                android:id="@+id/plusO"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textOnion2"
+                app:layout_constraintTop_toBottomOf="@+id/textOnion" />
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Roasted Red Peppers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textRoastR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roasted Red Peppers"
+                app:layout_constraintTop_toBottomOf="@+id/minusO"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textRoastR2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus22"
+                app:layout_constraintTop_toBottomOf="@+id/textRoastR" />
+
+            <Button
+                android:id="@+id/minus22"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textRoastR" />
+
+            <Button
+                android:id="@+id/plus22"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textRoastR2"
+                app:layout_constraintTop_toBottomOf="@+id/textRoastR" />
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Spinach~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textSpinach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spinach"
+                app:layout_constraintTop_toBottomOf="@+id/minus22"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textSpinach2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus23"
+                app:layout_constraintTop_toBottomOf="@+id/textSpinach" />
+
+            <Button
+                android:id="@+id/minus23"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textSpinach" />
+
+            <Button
+                android:id="@+id/plus23"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textSpinach2"
+                app:layout_constraintTop_toBottomOf="@+id/textSpinach" />
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Diced Tomatoes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textDtomatoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diced Tomatoes"
+                app:layout_constraintTop_toBottomOf="@+id/minus23"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textDtomatoes2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus24"
+                app:layout_constraintTop_toBottomOf="@+id/textDtomatoes" />
+
+            <Button
+                android:id="@+id/minus24"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textDtomatoes" />
+
+            <Button
+                android:id="@+id/plus24"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textDtomatoes2"
+                app:layout_constraintTop_toBottomOf="@+id/textDtomatoes" />
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~Hot Sauce~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <TextView
+                android:id="@+id/textHsauce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hot Sauce"
+                app:layout_constraintTop_toBottomOf="@+id/minus24"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/textHsauce2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                app:layout_constraintLeft_toRightOf="@+id/minus25"
+                app:layout_constraintTop_toBottomOf="@+id/textHsauce" />
+
+            <Button
+                android:id="@+id/minus25"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
+                android:text="-"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textHsauce" />
+
+            <Button
+                android:id="@+id/plus25"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/textHsauce2"
+                app:layout_constraintTop_toBottomOf="@+id/textHsauce" />
+            <!-- ~~~~~~~~~~~~~~~~~~~  Specials ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            <TextView
+                android:id="@+id/Special"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Special Instruction"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/minus25"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/Seasoning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Seasoning: "
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/Special"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Spinner
+                android:id="@+id/spinnerSeasoning"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Special"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/Cut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Cut: "
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSeasoning"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Spinner
+                android:id="@+id/spinnerCut"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSeasoning"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/Bake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Bake: "
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerCut"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Spinner
+                android:id="@+id/spinnerBake"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerCut"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="13dp"
+                android:onClick="gotood"
+                android:text="Order Details"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerBake" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
