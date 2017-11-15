@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
     }
     public void gotoca(View view)
     {
-        startActivity(new Intent(getApplicationContext(),SignIn.class));
+        startActivity(new Intent(getApplicationContext(),SignIn2.class));
     }
 
     public void gototc(View view)
