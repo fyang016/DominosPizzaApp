@@ -44,6 +44,11 @@ public class MainActivity extends Activity {
     */
     public void gotoca(View view)
     {
+        startActivity(new Intent(getApplicationContext(),CreateAccount.class));
+    }
+
+    public void gotoSignIn2(View view)
+    {
         startActivity(new Intent(getApplicationContext(),SignIn2.class));
     }
 
@@ -54,5 +59,17 @@ public class MainActivity extends Activity {
     public void gotoro(View view)
     {
         startActivity(new Intent(getApplicationContext(),RecentOrders.class));
+    }
+    public void gotosl(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),StoreList.class));
+    }
+    public void gotoRA(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),RecyclerViewTest.class));
+    }
+    public void gotoLocation(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),Location.class));
     }
 }

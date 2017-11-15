@@ -35,7 +35,12 @@
             android:name=".OrderDetail"
             android:label="OrderDetail"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Location"></activity>
+        <activity android:name=".Location" />
+        <activity
+            android:name=".StoreList"
+            android:label="@string/title_activity_store_list"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".RecyclerViewTest"></activity>
     </application>
 
 </manifest>

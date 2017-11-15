@@ -85,17 +85,15 @@
 
     <TextView
         android:id="@+id/tvPizzaProfile"
-        android:layout_width="359dp"
+        android:layout_width="335dp"
         android:layout_height="123dp"
-        android:layout_marginBottom="72dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="76dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Don't have a Pizza Profile?
-       * Earn points toward free pizza with Piece of the Pie
-       Rewards
-       * Securely save your credit card
-       * Save your delivery address"
+        android:text="Don't have a Pizza Profile?\n\t* Earn points toward free pizza with Piece of the Pie\t\tRewards\n\t* Securely save your credit card\n\t* Save your delivery address"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -122,27 +120,24 @@
         android:id="@+id/btnForgotPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="300dp"
         android:text="Forgot your password?"
-        app:layout_constraintBottom_toTopOf="@+id/tvPizzaProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbKeep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="151dp"
         android:text="Keep Me Signed IN"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="151dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvInfo"
-        android:layout_width="159dp"
-        android:layout_height="27dp"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="37dp" />
 </android.support.constraint.ConstraintLayout>
