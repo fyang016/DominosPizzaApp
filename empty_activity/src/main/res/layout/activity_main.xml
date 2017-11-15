@@ -35,7 +35,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="9dp"
         android:onClick="gotoca"
-        android:text="Create Account" />
+        android:text="Login" />
 
     <Button
         android:id="@+id/button3"
