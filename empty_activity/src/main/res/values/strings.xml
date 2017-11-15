@@ -33,6 +33,7 @@
     <string name="delivery_advice">Any Delivery Charge is not a tip paid to your driver. Please reward your driver for awesomeness. Our drivers carry less than $20.</string>
     <string name="terms_of_use_advisory">By placing your order you agree to our Terms of Use and that you are at least 13 years old.</string>
     <string name="secure_lock">Secure Transaction</string>
+    <string name="title_activity_trial">Trial</string>
 
     <!-- Sales Tax is 8.75% -->
 
