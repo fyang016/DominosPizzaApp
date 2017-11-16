@@ -1,9 +1,11 @@
 package com.os.operando.emptyactivity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -38,5 +40,10 @@ public class StoreList extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         adapter = new ContactAdapter(list, this);
         recyclerView.setAdapter(adapter);
+    }
+
+    public void gotoGoogleMaps(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),GoogleMaps.class));
     }
 }

@@ -9,8 +9,16 @@
     android:paddingTop="16dp"
     tools:context="com.os.operando.emptyactivity.StoreList">
 
-    <android.support.v7.widget.RecyclerView
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Google Maps"
+        android:onClick="gotoGoogleMaps"
+        android:id="@+id/gmaps"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="50dp"
+        android:layout_height="500dp"
         android:layout_width="match_parent"
         android:id="@+id/recycler_view">
     </android.support.v7.widget.RecyclerView>

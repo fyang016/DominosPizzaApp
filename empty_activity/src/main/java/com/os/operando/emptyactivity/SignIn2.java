@@ -69,6 +69,9 @@ public class SignIn2 extends AppCompatActivity {
         }*/
 
 
-         }
-
     }
+    public void gotoca(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),CreateAccount.class));
+    }
+}

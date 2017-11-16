@@ -42,6 +42,8 @@ public class MainActivity extends Activity {
         txt.setText("You tapped " + count + " time(s).");
     }
     */
+
+    // Create a new account/profile
     public void gotoca(View view)
     {
         startActivity(new Intent(getApplicationContext(),CreateAccount.class));
@@ -66,5 +68,9 @@ public class MainActivity extends Activity {
     public void gotoLocation(View view)
     {
         startActivity(new Intent(getApplicationContext(),Location.class));
+    }
+    public void gotoRecentOrders(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),RecentOrders.class));
     }
 }
