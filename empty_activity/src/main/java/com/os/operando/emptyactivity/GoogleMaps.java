@@ -147,37 +147,6 @@ public class GoogleMaps extends FragmentActivity implements OnMapReadyCallback,
 
         switch(v.getId())
         {
-            case R.id.B_search:
-                EditText tf_location = (EditText) findViewById(R.id.TF_location);
-                String location = tf_location.getText().toString();
-                List<Address> addressList;
-
-
-                if(!location.equals(""))
-                {
-                    Geocoder geocoder = new Geocoder(this);
-
-                    try {
-                        addressList = geocoder.getFromLocationName(location, 5);
-
-                        if(addressList != null)
-                        {
-                            for(int i = 0;i<addressList.size();i++)
-                            {
-                                LatLng latLng = new LatLng(addressList.get(i).getLatitude() , addressList.get(i).getLongitude());
-                                MarkerOptions markerOptions = new MarkerOptions();
-                                markerOptions.position(latLng);
-                                markerOptions.title(location);
-                                mMap.addMarker(markerOptions);
-                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
-                            }
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                break;
             case R.id.B_hospitals:
                 mMap.clear();
                 String hospital = "dominos";
@@ -210,7 +179,6 @@ public class GoogleMaps extends FragmentActivity implements OnMapReadyCallback,
                 getNearbyPlacesData.execute(dataTransfer);
                 Toast.makeText(GoogleMaps.this, "Showing Nearby Hotels", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.B_to:
         }
     }
 
