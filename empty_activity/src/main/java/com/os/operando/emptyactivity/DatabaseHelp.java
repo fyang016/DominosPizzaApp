@@ -27,11 +27,13 @@ public class DatabaseHelp extends SQLiteOpenHelper {
             " PhoneNumber TEXT NOT NULL); ";
 
     private static final String TABLE_ORDERS = "Orders";
-    private static final String KEY_FAVORDERS = "FavoriteOrder";
+    private static final String KEY_ID = "OrderID";
+    private static final String KEY_TOPPING = "Topping";
+    private static final String KEY_AMOUNT = "Amount";
     private static final String KEY_COST = "Cost";
     private static final String KEY_TIME = "OrderTime ";
-    private static final String CREATE_FAVORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS +" (" + KEY_EMAIL +
-            " TEXT FOREIGN KEY NOT NULL, " + KEY_FAVORDERS + "TEXT ," + KEY_COST + " INT, "+ KEY_TIME + " TIME);";
+    private static final String CREATE_FAVORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS +" (" +KEY_ID + "primary key AUTO INCREMENT NOT NULL"+KEY_EMAIL +
+            " TEXT FOREIGN KEY NOT NULL, " + KEY_TOPPING + " TEXT ," + KEY_AMOUNT +" INT,"+ KEY_COST + " INT, "+ KEY_TIME + " TIME);";
     SQLiteDatabase udbs;
 
     public DatabaseHelp(Context context)
@@ -73,8 +75,10 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         udbs = this.getWritableDatabase();
 
         ContentValues val = new ContentValues();
+        val.put(KEY_ID,recentOrdersInfo.getOrderid());
         val.put(KEY_EMAIL,logininfo.getEmail());
-        val.put(KEY_FAVORDERS,recentOrdersInfo.getFavoriteOrder());
+        val.put(KEY_TOPPING,recentOrdersInfo.getTopping());
+        val.put(KEY_AMOUNT,recentOrdersInfo.getAmount());
         val.put(KEY_COST,recentOrdersInfo.getCost());
         val.put(KEY_TIME, String.valueOf(recentOrdersInfo.getOrdertime()));
 
