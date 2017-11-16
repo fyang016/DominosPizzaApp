@@ -14,7 +14,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:id="@+id/store_image_details"
-        android:src="@drawable/store1"
+        android:src="@drawable/dominos_store"
         android:layout_gravity="center"
         />
     <TextView

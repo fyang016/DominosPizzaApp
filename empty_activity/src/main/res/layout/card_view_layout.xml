@@ -19,7 +19,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/store1"
+                android:src="@drawable/dominos_store"
                 android:id="@+id/store_image" />
             <TextView
                 android:layout_width="wrap_content"

@@ -3,19 +3,57 @@ package com.os.operando.emptyactivity;
 import java.sql.Time;
 
 public class RecentOrdersInfo {
-    String favoriteOrder;
+    Integer orderid;
+    String email;
+    String topping;
+    Integer amount;
     Integer cost;
     Time ordertime;
 
     public RecentOrdersInfo()
     {}
 
-    public RecentOrdersInfo(String favoriteOrder, Integer cost)
+    public RecentOrdersInfo(Integer orderid,String email,String topping, Integer amount, Integer cost,Time ordertime)
     {
-        this.favoriteOrder = favoriteOrder;
+        this.orderid = orderid;
+        this.email = email;
+        this.topping = topping;
+        this.amount = amount;
         this.cost = cost;
         this.ordertime = ordertime;
 
+    }
+
+    public Integer getOrderid() {
+        return orderid;
+    }
+
+    public void setOrderid(Integer orderid) {
+        this.orderid = orderid;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTopping() {
+        return topping;
+    }
+
+    public void setTopping(String topping) {
+        this.topping = topping;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 
     public Time getOrdertime() {
@@ -24,14 +62,6 @@ public class RecentOrdersInfo {
 
     public void setOrdertime(Time ordertime) {
         this.ordertime = ordertime;
-    }
-
-    public String getFavoriteOrder() {
-        return favoriteOrder;
-    }
-
-    public void setFavoriteOrder(String favoriteOrder) {
-        this.favoriteOrder = favoriteOrder;
     }
 
     public Integer getCost() {
