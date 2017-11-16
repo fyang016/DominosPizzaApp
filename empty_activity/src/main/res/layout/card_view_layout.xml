@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/store_phone"
                 android:layout_toRightOf="@+id/store_image"
-                android:text="9AM-5PM"
+                android:text="Hours: 9AM-5PM"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="20dp"

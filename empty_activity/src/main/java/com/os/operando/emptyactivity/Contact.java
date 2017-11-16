@@ -4,6 +4,8 @@ package com.os.operando.emptyactivity;
  * Created by AdrenResi on 11/15/2017.
  */
 
+// PLEASE READ: I was basically following a YouTube tutorial to the tee. This is actually for the Store List.
+
 public class Contact {
     public Contact(int image_id, String address, String phone, String hours) {
         this.setImage_id(image_id);

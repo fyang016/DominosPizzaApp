@@ -36,7 +36,7 @@ public class StoreList extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        adapter = new ContactAdapter(list);
+        adapter = new ContactAdapter(list, this);
         recyclerView.setAdapter(adapter);
     }
 }
