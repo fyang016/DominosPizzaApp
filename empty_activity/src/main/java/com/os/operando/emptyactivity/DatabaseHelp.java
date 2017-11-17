@@ -150,7 +150,7 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         {
             do{
                 top += cursor.getString(0);
-                top += " ";
+                top += "\n";
             }while (cursor.moveToNext());
         }
         return top;

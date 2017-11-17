@@ -22,7 +22,12 @@ public class MainPage2 extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main_page2);
-
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle UserBundle =new Bundle();
+        UserBundle.putSerializable("UserInformation", UserInformation);
+        Intent S2intent = new Intent(getApplicationContext(), CreateAccount.class);
+        S2intent.putExtras(UserBundle);
         /*
         androidImageButton = (ImageButton) findViewById(R.id.image_button_android);
 
