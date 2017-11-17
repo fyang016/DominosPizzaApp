@@ -164,9 +164,13 @@ public class preCheckout extends AppCompatActivity {
 
     public void gototc(View view)
     {
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+
         Intent TC_intent = new Intent(getApplicationContext(),ToppingChoice.class);
         Bundle PizzaBundle =new Bundle();
         PizzaBundle.putSerializable("Pizzas", TotalOrder);
+        PizzaBundle.putSerializable("UserInformation", UserInformation);
         TC_intent.putExtras(PizzaBundle);
         startActivity(TC_intent);
         //startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
@@ -174,9 +178,13 @@ public class preCheckout extends AppCompatActivity {
 
     public void gotoCoupons(View view)
     {
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+
         Intent Coupon_intent = new Intent(getApplicationContext(),Coupons.class);
         Bundle CouponBundle =new Bundle();
         CouponBundle.putSerializable("Pizzas", TotalOrder);
+        CouponBundle.putSerializable("UserInformation", UserInformation);
         Coupon_intent.putExtras(CouponBundle);
         startActivity(Coupon_intent);
 

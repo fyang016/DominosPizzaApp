@@ -29,10 +29,11 @@ public class Coupons extends AppCompatActivity {
         Bundle CouponBundle = CurInt.getExtras();
         CouponBundle.remove("MinusFive");
         Intent PC_intent = new Intent(getApplicationContext(),preCheckout.class);
-
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
         ArrayList<String> Coupon = new ArrayList<String>();
         Coupon.add("Minus 5");
         CouponBundle.putSerializable("MinusFive", Coupon );
+        CouponBundle.putSerializable("UserInformation", UserInformation);
         PC_intent.putExtras(CouponBundle);
         startActivity(PC_intent);
     }
