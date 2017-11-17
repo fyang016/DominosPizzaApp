@@ -27,6 +27,7 @@
         app:layout_constraintLeft_toRightOf="@+id/imageButton8"
         app:layout_constraintStart_toEndOf="@+id/imageButton8"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="gotoCoupons"
         app:srcCompat="@drawable/coupons_button" />
 
     <ImageButton
