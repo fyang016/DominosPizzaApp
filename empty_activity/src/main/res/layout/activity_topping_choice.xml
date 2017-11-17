@@ -1117,7 +1117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="13dp"
-                android:onClick="gotood"
+                android:onClick="gotoPC"
                 android:text="Order Details"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerBake" />
         </android.support.constraint.ConstraintLayout>

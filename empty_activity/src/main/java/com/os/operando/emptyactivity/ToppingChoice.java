@@ -5,10 +5,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ToppingChoice extends AppCompatActivity {
     EditText txtSauce, txtQuantity, txtCheese, txtPepperoni, txtSausage, txtBeef,
@@ -32,7 +36,25 @@ public class ToppingChoice extends AppCompatActivity {
             provoloneDensity,spinachDensity, dicedDensity, hotDensity= 0;
 
     String[] density = new String[] { "None", "Light", "Normal", "Extra", "Double"};
+    String[] items = new String[]{"Hand Tossed - Small (10\")",
+            "Hand Tossed - Medium (12\") ","Hand Tossed - Large (14\") ",
+            "Handmade Pan - Small (10\")", "Handmade Pan - Medium (12\")",
+            "Handmade Pan - Large (14\")", "Crunchy Thin Crust - Small(10\')",
+            "Crunchy Thin Crust - Medium(12\')", "Crunchy Thin Crust - Large(14\')",
+            "Brooklyn Style - Small (10\")", "Brooklyn Style - Medium (12\")",
+            "Brooklyn Style - Large (14\")", "Gluten Free Crust -Small (10\')",
+            "Gluten Free Crust -Medium (12\')", "Gluten Free Crust -Large (14\')",};
+    String[] items2 = new String[]{ "Robust Inspired Tomato Sauce", "No Sauce",
+            "BBQ Sauce", "Garlic Parmesan White Sauce", "Alfredo Sauce"};
+    String[] items3 = new String[]{ "No Garlic-Seasoned Crust", "Garlic-Seasoned Crust"};
+    String[] items4 = new String[]{ "Pie Cut", "Square Cut", "Uncut"};
+    String[] items5 = new String[]{ "Normal Bake","Well Done"};
 
+    String PizzaType = "";
+    String SauceType = "";
+    String SeasonType = "";
+    String CutType = "";
+    String BakeType = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,15 +64,10 @@ public class ToppingChoice extends AppCompatActivity {
         //Spinner 1
         //get the spinner from the xml.
         Spinner dropdown = (Spinner)findViewById(R.id.spinner1);
+
+
         //create a list of items for the spinner.
-        String[] items = new String[]{"Hand Tossed - Small (10\")",
-                "Hand Tossed - Medium (12\") ","Hand Tossed - Large (14\") ",
-                "Handmade Pan - Small (10\")", "Handmade Pan - Medium (12\")",
-                "Handmade Pan - Large (14\")", "Crunchy Thin Crust - Small(10\')",
-                "Crunchy Thin Crust - Medium(12\')", "Crunchy Thin Crust - Large(14\')",
-                "Brooklyn Style - Small (10\")", "Brooklyn Style - Medium (12\")",
-                "Brooklyn Style - Large (14\")", "Gluten Free Crust -Small (10\')",
-                "Gluten Free Crust -Medium (12\')", "Gluten Free Crust -Large (14\')",};
+
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -58,54 +75,89 @@ public class ToppingChoice extends AppCompatActivity {
         //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
 
+        //FROM https://stackoverflow.com/questions/1947933/how-to-get-spinner-value   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                PizzaType = parent.getItemAtPosition(pos).toString();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
         //Spinner 2
         //get the spinner from the xml.
         Spinner dropdown2 = (Spinner)findViewById(R.id.spinnerSauce);
         //create a list of items for the spinner.
-        String[] items2 = new String[]{ "Robust Inspired Tomato Sauce", "No Sauce",
-                "BBQ Sauce", "Garlic Parmesan White Sauce", "Alfredo Sauce"};
+
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, items2);
         //set the spinners adapter to the previously created one.
         dropdown2.setAdapter(adapter2);
+        dropdown2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                SauceType = parent.getItemAtPosition(pos).toString();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         //Spinner Seasoning
         //get the spinner from the xml.
         Spinner dropdown3 = (Spinner)findViewById(R.id.spinnerSeasoning);
         //create a list of items for the spinner.
-        String[] items3 = new String[]{ "Garlic-Seasoned Crust", "No Garlic-Seasoned Crust"};
+
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, items3);
         //set the spinners adapter to the previously created one.
         dropdown3.setAdapter(adapter3);
+        dropdown3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                SeasonType = parent.getItemAtPosition(pos).toString();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         //Spinner Cut
         //get the spinner from the xml.
         Spinner dropdown4 = (Spinner)findViewById(R.id.spinnerCut);
         //create a list of items for the spinner.
-        String[] items4 = new String[]{ "Pie Cut", "Square Cut", "Uncut"};
+
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, items4);
         //set the spinners adapter to the previously created one.
         dropdown4.setAdapter(adapter4);
+        dropdown4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                CutType = parent.getItemAtPosition(pos).toString();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         //Spinner Bake
         //get the spinner from the xml.
         Spinner dropdown5 = (Spinner)findViewById(R.id.spinnerBake);
         //create a list of items for the spinner.
-        String[] items5 = new String[]{ "Well Done", "Normal Bake"};
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, items5);
         //set the spinners adapter to the previously created one.
         dropdown5.setAdapter(adapter5);
+        dropdown5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                BakeType = parent.getItemAtPosition(pos).toString();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         //Quality buttons
         //Plus
@@ -946,13 +998,51 @@ public class ToppingChoice extends AppCompatActivity {
 
 
     }
+
+
     public void gototc(View view)
     {
         startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
     }
 
-    public void gotood(View view)
+    public void gotoPC(View view)
     {
-        startActivity(new Intent(getApplicationContext(),OrderDetail.class));
+
+        String CurTopping =  PizzaType + ", " + SauceType +":"+ density[sauceDensity]
+                + ", Cheese:" + density[cheeseDensity] + ", Pepperoni:" + density[pepperoniDensity]
+                + ", Italian Sausage:" + density[sausageDensity] + ", Beef:" + density[beefDensity]
+                + ", Philly Steak:" + density[steakDensity] + ", Ham:" + density[hamDensity]
+                + ", Bacon:" + density[baconDensity] + ", Salami:" + density[salamiDensity]
+                + ", Premium Chicken:" + density[chickenDensity]  + ", Cheddar Cheese:"
+                + density[cheddarDensity] + ", Feta Cheese:" + density[fetaDensity]
+                + ", Shredded Parmesan Asiago:" + density[parmesanDensity]
+                + ", Shredded Provolone Cheese:" + density[provoloneDensity]
+                + ", Banana Pepper:" + density[bananaDensity] + ", Black Olives:" + density[olivesDensity]
+                + ", Green Pepper:" + density[greenDensity] + ", Jalapeno Peppers:" + density[jalapenoDensity]
+                + ", Mushrooms:" + density[mushroomsDensity] + ", Pineapple:" + density[pineappleDensity]
+                + ", Onion:" + density[onionDensity] + ", Roasted Red Peppers:" + density[roastDensity]
+                + ", Spinach:" + density[spinachDensity] + ", Diced Tomatoes:" + density[dicedDensity]
+                + ", Hot Sauce:" + density[hotDensity] + ", " + SeasonType + ", " + CutType + ", " +
+                BakeType + ", Quantity: " + Integer.toString(quantityCount);
+
+        Intent PC_intent = new Intent(getApplicationContext(),preCheckout.class);
+        ArrayList<String> Topping;
+
+        Intent CurInt = getIntent();
+        ArrayList<String> Pizzas = CurInt.getStringArrayListExtra("Pizzas");
+        if(Pizzas != null)
+        {
+            Topping = Pizzas;
+        }
+        else
+        {
+            Topping = new ArrayList<String>();
+        }
+        Topping.add(CurTopping);
+        Bundle PizzaBundle =new Bundle();
+        PizzaBundle.putSerializable("Pizzas", Topping);
+        PC_intent.putExtras(PizzaBundle);
+        startActivity(PC_intent);
+
     }
 }
