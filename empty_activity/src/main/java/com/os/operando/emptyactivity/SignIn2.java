@@ -31,8 +31,7 @@ public class SignIn2 extends AppCompatActivity {
         }
         else
         {
-            LoginInfo account = new LoginInfo();
-            Intent intent = new Intent(this, OrderPizza.class);
+            Intent intent = new Intent(getApplicationContext(), MainPage2.class);
             startActivity(intent);
             //startActivity(new Intent(getApplicationContext(),MainActivity.class));
         }

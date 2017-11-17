@@ -6,14 +6,14 @@ public class RecentOrdersInfo {
     Integer orderid;
     String email;
     String topping;
-    Integer amount;
+    String amount;
     Integer cost;
     Time ordertime;
 
     public RecentOrdersInfo()
     {}
 
-    public RecentOrdersInfo(Integer orderid,String email,String topping, Integer amount, Integer cost,Time ordertime)
+    public RecentOrdersInfo(Integer orderid,String email,String topping, String amount, Integer cost,Time ordertime)
     {
         this.orderid = orderid;
         this.email = email;
@@ -48,11 +48,11 @@ public class RecentOrdersInfo {
         this.topping = topping;
     }
 
-    public Integer getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ToppingChoice extends AppCompatActivity {
+    DatabaseHelp databasehelp = new DatabaseHelp(this);
+
     EditText txtSauce, txtQuantity, txtCheese, txtPepperoni, txtSausage, txtBeef,
             txtSteak, txtHam, txtBacon, txtSalami, txtChicken, txtCheddar, txtFeta,
             txtParmesan, txtProvolone, txtBanana, txtOlives, txtGreen, txtJalapeno,
@@ -1007,6 +1009,18 @@ public class ToppingChoice extends AppCompatActivity {
 
     public void gotoPC(View view)
     {
+        Intent startIntent = new Intent(getApplicationContext(), LoginInfo.class);
+        //Intent
+        //String uname = startIntent.getEmail();
+        RecentOrdersInfo recentOrders = new RecentOrdersInfo();
+        recentOrders.setTopping(PizzaType);
+        recentOrders.setAmount("None");
+        if(density[sauceDensity]!="None")
+        {
+            recentOrders.setTopping(SauceType);
+            recentOrders.setAmount(density[sausageDensity]);
+
+        }
 
         String CurTopping =  PizzaType + ", " + SauceType +":"+ density[sauceDensity]
                 + ", Cheese:" + density[cheeseDensity] + ", Pepperoni:" + density[pepperoniDensity]

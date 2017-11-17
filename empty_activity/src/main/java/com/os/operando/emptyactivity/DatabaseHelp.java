@@ -33,7 +33,7 @@ public class DatabaseHelp extends SQLiteOpenHelper {
     private static final String KEY_COST = "Cost";
     private static final String KEY_TIME = "OrderTime ";
     private static final String CREATE_FAVORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS +" (" +KEY_ID + "primary key AUTO INCREMENT NOT NULL"+KEY_EMAIL +
-            " TEXT FOREIGN KEY NOT NULL, " + KEY_TOPPING + " TEXT ," + KEY_AMOUNT +" INT,"+ KEY_COST + " INT, "+ KEY_TIME + " TIME);";
+            " TEXT FOREIGN KEY NOT NULL, " + KEY_TOPPING + " TEXT ," + KEY_AMOUNT +" TEXT,"+ KEY_COST + " INT, "+ KEY_TIME + " TIME);";
     SQLiteDatabase udbs;
 
     public DatabaseHelp(Context context)
