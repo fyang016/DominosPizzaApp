@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/description_delivery"
         android:src="@drawable/delivery_home"
-        android:onClick="gotoLocation"
+        android:onClick="gototc"
         app:layout_constraintStart_toStartOf="@+id/imageButton9"
         app:layout_constraintLeft_toLeftOf="@+id/imageButton9"
         app:layout_constraintBottom_toTopOf="@+id/imageButton9" />
