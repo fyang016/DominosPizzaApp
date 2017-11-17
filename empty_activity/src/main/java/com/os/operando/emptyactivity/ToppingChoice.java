@@ -1053,8 +1053,10 @@ public class ToppingChoice extends AppCompatActivity {
             Topping = new ArrayList<String>();
         }
         Topping.add(CurTopping);
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
         Bundle PizzaBundle =new Bundle();
         PizzaBundle.putSerializable("Pizzas", Topping);
+        PizzaBundle.putSerializable("UserInformation", UserInformation);
         PC_intent.putExtras(PizzaBundle);
         startActivity(PC_intent);
 //        Topping.add(CurTopping);
