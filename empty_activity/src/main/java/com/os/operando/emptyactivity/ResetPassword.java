@@ -19,6 +19,8 @@ public class ResetPassword extends AppCompatActivity {
     private TextView ConfirmPassword;
     private Button SavePassword;
     private TextView PassIncorrect;
+    private TextView EmailAddress;
+    private EditText tFEmailAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class ResetPassword extends AppCompatActivity {
         ConfirmPassword = (TextView) findViewById(R.id.tVConfirmPassword);
         SavePassword = (Button) findViewById(R.id.btnSavePassword);
         PassIncorrect = (TextView) findViewById(R.id.tVPassIncorrect);
+        EmailAddress = (TextView) findViewById(R.id.tVEmailAddress);
+        tFEmailAddress = (EditText) findViewById(R.id.tfEmailAddress);
     }
 
        // ResetPassword.setOnClickListener(new View.OnClickListener() {
@@ -37,31 +41,24 @@ public class ResetPassword extends AppCompatActivity {
            // public void onClick(View v) {
     private void checkPassword(String Password1, String Password2){
 
+        EditText email = (EditText)findViewById(R.id.tfEmailAddress);
+
+
+        String emailst = email.getText().toString();
+
+
         //check if passwords are the same
-        if(Password1 == Password2)
+        if(Password1 == Password2){
+            help.UpdatePass(emailst, Password2);
 
-            String password = help.searchPass(userEmail);
-
-            if(userPassword.equals(password))
-            {
                 Intent intent = new Intent(this, OrderPizza.class);
                 startActivity(intent);
 
-            }
-
-            else
+        } else
             {
-               counter--;
-                Info.setText("No of attmepts reamaing: " + String.valueOf(counter));
-                if (counter == 0) {
-                    SignIn.setEnabled(false);
+                PassIncorrect.setText("Passwords Not the Same");
 
 
-                }
             }
-
-
-        }  //   validate(Email.getText().toString(), Password.getText().toString());
-
     }
 }
