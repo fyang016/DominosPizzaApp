@@ -67,14 +67,19 @@ public class MainPage2 extends Activity {
 
     public void gotoSignIn2(View view)
     {
-        Intent CurInt = getIntent();
+        EmailGlobal emailg = ((EmailGlobal)getApplicationContext());
+        emailg.setUemail("");
+        /*Intent CurInt = getIntent();
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
         Bundle UserBundle =new Bundle();
         UserBundle.putSerializable("UserInformation", UserInformation);
-        Intent S2intent = new Intent(getApplicationContext(), SignIn2.class);
+        Intent S2intent = new Intent(getApplicationContext(), MainActivity.class);
         S2intent.putExtras(UserBundle);
         startActivity(S2intent);
-//        startActivity(new Intent(getApplicationContext(),SignIn2.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));*/
+        Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(startIntent);
     }
 
     public void gototc(View view)
