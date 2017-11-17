@@ -5,25 +5,35 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/TF_location"
-        android:layout_width="290dp"
-        android:layout_height="45dp"
+        android:id="@+id/TF_location2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Enter delivery address."
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/B_search"
-        android:layout_width="100dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/TF_location"
-        android:layout_toRightOf="@+id/TF_location"
+        android:layout_toEndOf="@+id/TF_location2"
+        android:layout_toRightOf="@+id/TF_location2"
         android:onClick="onClick"
         android:text="Search" />
+
+    <Button
+        android:id="@+id/go_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/B_search"
+        android:layout_toRightOf="@+id/B_search"
+        android:onClick="gotoTracking"
+        android:text="Go" />
 
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
@@ -33,10 +43,12 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.example.priyanka.mapsdemo.MapsActivity"
+        tools:context="com.os.operando.emptyactivity.DeliveryMaps"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_below="@+id/TF_location" />
+        android:layout_below="@+id/TF_location2" />
+
+
 
 </RelativeLayout>

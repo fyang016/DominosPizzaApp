@@ -100,6 +100,10 @@ public class GoogleMaps extends FragmentActivity implements OnMapReadyCallback,
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        LatLng latLng = new LatLng(42.215002,-82.934421);
+        float zoom = 2.0f;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,zoom));
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             bulidGoogleApiClient();
             mMap.setMyLocationEnabled(true);

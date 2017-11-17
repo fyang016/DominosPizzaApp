@@ -1,6 +1,7 @@
 package com.os.operando.emptyactivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -51,7 +52,7 @@ public class DeliveryMaps extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_google_maps);
+        setContentView(R.layout.activity_delivery_maps);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
@@ -100,6 +101,10 @@ public class DeliveryMaps extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        LatLng latLng = new LatLng(42.215002,-82.934421);
+        float zoom = 2.0f;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,zoom));
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             bulidGoogleApiClient();
             mMap.setMyLocationEnabled(true);
@@ -147,58 +152,52 @@ public class DeliveryMaps extends FragmentActivity implements OnMapReadyCallback
 
         switch(v.getId())
         {
-            case R.id.B_hospitals:
-                mMap.clear();
-                String hospital = "dominos";
-                String url = getUrl(latitude, longitude, hospital,"");
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
-
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(DeliveryMaps.this, "Showing Nearby Domino's locations", Toast.LENGTH_SHORT).show();
-                break;
+            case R.id.B_search:
+                EditText tf_location = (EditText) findViewById(R.id.TF_location2);
+                String location = tf_location.getText().toString();
+                List<Address> addressList;
 
 
-            case R.id.B_schools:
-                mMap.clear();
-                String school = "school";
-                url = getUrl(latitude, longitude, "", school);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
+                if(!location.equals(""))
+                {
+                    Geocoder geocoder = new Geocoder(this);
 
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(DeliveryMaps.this, "Showing Nearby Schools", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.B_restaurants:
-                mMap.clear();
-                String resturant = "hotel";
-                url = getUrl(latitude, longitude, "", resturant);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
+                    try {
+                        addressList = geocoder.getFromLocationName(location, 5);
 
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(DeliveryMaps.this, "Showing Nearby Hotels", Toast.LENGTH_SHORT).show();
+                        if(addressList != null)
+                        {
+//                            for(int i = 0;i<addressList.size();i++)
+//                            {
+                            LatLng latLng = new LatLng(addressList.get(0).getLatitude() , addressList.get(0).getLongitude());
+                            MarkerOptions markerOptions = new MarkerOptions();
+                            markerOptions.position(latLng);
+                            markerOptions.title(location);
+                            mMap.addMarker(markerOptions);
+                            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+//                            }
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
                 break;
         }
     }
 
 
-    private String getUrl(double latitude , double longitude , String placeName, String placeType)
+    private String getUrl(double latitude , double longitude , String nearbyPlace)
     {
 
         StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googlePlaceUrl.append("location="+latitude+","+longitude);
         googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
-        if (placeName != "") {
-            googlePlaceUrl.append("&name="+placeName);
-        }
-        if (placeType != "") {
-            googlePlaceUrl.append("&type="+placeType);
-        }
+        googlePlaceUrl.append("&type="+nearbyPlace);
         googlePlaceUrl.append("&sensor=true");
-        googlePlaceUrl.append("&key="+"AIzaSyABN9nES7WJ4cYZPaSeWY2gZ5x2RGD2ZVM");
+        googlePlaceUrl.append("&key="+"AIzaSyBLEPBRfw7sMb73Mr88L91Jqh3tuE4mKsE");
 
-        Log.d("GoogleMaps", "url = "+googlePlaceUrl.toString());
+        Log.d("DeliveryMaps", "url = "+googlePlaceUrl.toString());
 
         return googlePlaceUrl.toString();
     }
@@ -247,4 +246,15 @@ public class DeliveryMaps extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
     }
+
+    public void gotoTracking(View view)
+    {
+        Intent trackingIntent = new Intent(getApplicationContext(),Tracking.class);
+
+        trackingIntent.putExtra("latitude",latitude);
+        trackingIntent.putExtra("longitude",longitude);
+
+        startActivity(trackingIntent);
+    }
+
 }

@@ -40,15 +40,6 @@
         android:onClick="gototc"
         app:srcCompat="@drawable/menu_button" />
 
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="54dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton7"
-        app:layout_constraintStart_toEndOf="@+id/imageButton7"
-        app:srcCompat="@drawable/red_white_shopping_cart" />
-
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
