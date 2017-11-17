@@ -42,10 +42,6 @@
             android:name=".ToppingChoice"
             android:label="ToppingChoice"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".OrderDetail"
-            android:label="OrderDetail"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Location" />
         <activity android:name=".StoreList" />
         <activity android:name=".StoreDetails" />
