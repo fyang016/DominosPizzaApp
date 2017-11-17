@@ -49,6 +49,11 @@ public class MainActivity extends Activity {
         startActivity(new Intent(getApplicationContext(),CreateAccount.class));
     }
 
+    public void gotoDeliveryMaps(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),DeliveryMaps.class));
+    }
+
     public void gotoSignIn2(View view)
     {
         startActivity(new Intent(getApplicationContext(),SignIn2.class));
