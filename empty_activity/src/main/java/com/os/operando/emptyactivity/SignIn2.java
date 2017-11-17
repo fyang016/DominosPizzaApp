@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class SignIn2 extends AppCompatActivity {
 
     DatabaseHelp help = new DatabaseHelp(this);
@@ -31,8 +33,13 @@ public class SignIn2 extends AppCompatActivity {
         }
         else
         {
-            Intent intent = new Intent(getApplicationContext(), MainPage2.class);
-            startActivity(intent);
+            Intent S2intent = new Intent(getApplicationContext(), MainPage2.class);
+            ArrayList<String> UserInformation = new ArrayList<String>();
+            UserInformation.add(emailst);
+            Bundle UserBundle =new Bundle();
+            UserBundle.putSerializable("UserInformation", UserInformation);
+            S2intent.putExtras(UserBundle);
+            startActivity(S2intent);
             //startActivity(new Intent(getApplicationContext(),MainActivity.class));
         }
 
