@@ -44,36 +44,40 @@ public class CreateAccount extends AppCompatActivity {
             String emailst2 = email2.getText().toString();
             String pass1st = pass1.getText().toString();
             String pass2st = pass2.getText().toString();
-
-            if(!pass1st.equals(pass2st))
+            if(fname.equals("") || lname.equals("") || pnstr.equals("") || emailst.equals("") ||
+                    emailst2.equals("")||pass1st.equals("")|| pass2st.equals(""))
             {
-                Toast pass = Toast.makeText(CreateAccount.this,"passwords don't match", Toast.LENGTH_SHORT);
-                pass.show();
+                Toast empty = Toast.makeText(CreateAccount.this,"All fields are required", Toast.LENGTH_SHORT);
+                empty.show();
             }
-            if(!emailst.equals(emailst2))
-            {
-                Toast mail = Toast.makeText(CreateAccount.this,"emails don't match", Toast.LENGTH_SHORT);
-                mail.show();
-            }
-            else
-            {
-                LoginInfo account = new LoginInfo();
-                account.setPassword(pass1st);
-                account.setEmail(emailst);
-                account.setFirstName(fname);
-                account.setLastName(lname);
-                account.setPhoneNumber(pnstr);
-                databasehelp.addUsers(account);
-                Toast mail = Toast.makeText(CreateAccount.this,"BOO", Toast.LENGTH_SHORT);
-                mail.show();
-                databasehelp.allUsers();
+           else {
+                if(!pass1st.equals(pass2st))
+                {
+                    Toast pass = Toast.makeText(CreateAccount.this, "passwords don't match", Toast.LENGTH_SHORT);
+                    pass.show();
+                }
 
-                Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
-                startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                getApplicationContext().startActivity(startIntent);
-                //startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            }
+                if (!emailst.equals(emailst2)) {
+                    Toast mail = Toast.makeText(CreateAccount.this, "emails don't match", Toast.LENGTH_SHORT);
+                    mail.show();
+                } else {
+                    LoginInfo account = new LoginInfo();
+                    account.setPassword(pass1st);
+                    account.setEmail(emailst);
+                    account.setFirstName(fname);
+                    account.setLastName(lname);
+                    account.setPhoneNumber(pnstr);
+                    databasehelp.addUsers(account);
+                    Toast mail = Toast.makeText(CreateAccount.this, "BOO", Toast.LENGTH_SHORT);
+                    mail.show();
+                    databasehelp.allUsers();
 
+                    Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+                    startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    getApplicationContext().startActivity(startIntent);
+                    //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                }
+            }
 
     }
 

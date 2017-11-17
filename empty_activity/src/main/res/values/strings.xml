@@ -9,7 +9,8 @@
     <string name="order_pizza">Order pizza here.</string>
     <string name="delivery_or_carryout">Is this order for delivery or carryout?</string>
     <string name="welcome_back">Welcome back!</string>
-    <string name="gift_cards">BUY GIFT CARDS</string>
+    <string name="reorder">REORDER</string>
+    <string name="sign_in">SIGN IN</string>
 
     <!-- Orders -->
     <string name="recent_orders">Your Recent Orders</string>
@@ -17,10 +18,10 @@
     <string name="credit">Credit</string>
     <string name="choose_drink">Choose Your Drink</string>
     <string name="add_beverage">Add a refreshing beverage to your order?</string>
-    <string name="coke">Coke</string>
-    <string name="diet_coke">Diet Coke</string>
-    <string name="sprite">Sprite</string>
-    <string name="fanta_orange">Fanta Orange</string>
+    <string name="drink_coke">Coke</string>
+    <string name="drink_diet_coke">Diet Coke</string>
+    <string name="drink_sprite">Sprite</string>
+    <string name="drink_fanta_orange">Fanta Orange</string>
     <string name="food_beverage">Food &amp; Beverage: </string>
     <string name="delivery">Delivery: </string>
     <string name="taxes">Taxes: </string>
@@ -33,10 +34,58 @@
     <string name="delivery_advice">Any Delivery Charge is not a tip paid to your driver. Please reward your driver for awesomeness. Our drivers carry less than $20.</string>
     <string name="terms_of_use_advisory">By placing your order you agree to our Terms of Use and that you are at least 13 years old.</string>
     <string name="secure_lock">Secure Transaction</string>
+    <string name="title_activity_trial">Trial</string>
 
     <!-- Sales Tax is 8.75% -->
 
     <!-- After Checkout -->
 
+    <!-- Button Descriptions -->
+    <string name="description_delivery">Makes you enter your address.</string>
+    <string name="description_carryout">Makes you choose a store location.</string>
+    <string name="title_activity_store_list">StoreList</string>
+
+    <!-- string arrays -->
+    <string-array name="store_address">
+        <item>"4012 Chicago Avenue"</item>
+        <item>"4100 Central Ave. Unit 105"</item>
+        <item>"22583 Barton Road"</item>
+        <item>"19510 Van Buren Blvd"</item>
+        <item>"229 W. Valley Blvd"</item>
+        <item>"24758 Sunnymead Blvd"</item>
+        <item>"24853 Alessandro Blvd"</item>
+        <item>"137 S Lilac Ave Ste 101"</item>
+        <item>"8300 Limonite Ave Suite H"</item>
+        <item>"2915 Van Buren Blvd Suite J-2"</item>
+    </string-array>
+
+    <string-array name="store_phone">
+        <item>"(251) 546-9442"</item>
+        <item>"(630) 446-8851"</item>
+        <item>"(125) 546-4478"</item>
+        <item>"(226) 906-2721"</item>
+        <item>"(949) 569-4371"</item>
+        <item>"(671) 925-1352"</item>
+        <item>"(332) 133-3816"</item>
+        <item>"(237) 680-5056"</item>
+        <item>"(517) 121-1110"</item>
+        <item>"(918) 140-2168"</item>
+    </string-array>
+
+    <string-array name="store_hours">
+        <item>"Hours: 9-5"</item>
+        <item>"Hours: 9-5"</item>
+        <item>"Hours: 9-5"</item>
+        <item>"Hours: 9-5"</item>
+        <item>"Hours: 9-5"</item>
+        <item>"Hours: 9-5"</item>
+        <item>"Hours: 9-5"</item>
+        <item>"Hours: 9-5"</item>
+        <item>"Hours: 24 hrs"</item>
+        <item>Hours: 9-5"</item>
+    </string-array>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_google_maps">Map</string>
 
 </resources>

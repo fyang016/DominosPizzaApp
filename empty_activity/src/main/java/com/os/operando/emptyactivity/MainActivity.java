@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
+        /*
         androidImageButton = (ImageButton) findViewById(R.id.image_button_android);
 
         androidImageButton.setOnClickListener(new View.OnClickListener() {
@@ -31,23 +32,49 @@ public class MainActivity extends Activity {
                 startActivity(intentLoadNewActivity);
             }
         });
+        */
     }
 
+    /*
     public void onClick(View view) {
         count++;
         TextView txt = (TextView) findViewById(R.id.text1);
         txt.setText("You tapped " + count + " time(s).");
     }
+    */
+
+    // Create a new account/profile
     public void gotoca(View view)
     {
-        startActivity(new Intent(getApplicationContext(),SignIn.class));
+        startActivity(new Intent(getApplicationContext(),CreateAccount.class));
     }
 
-    public void gotots(View view)
+    public void gotoDeliveryMaps(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),DeliveryMaps.class));
+    }
+
+    public void gotoSignIn2(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),SignIn2.class));
+    }
+
+    public void gototc(View view)
     {
         startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
     }
     public void gotoro(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),RecentOrders.class));
+    }
+    public void gotosl(View view) {
+        startActivity(new Intent(getApplicationContext(), StoreList.class));
+    }
+    public void gotoLocation(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),Location.class));
+    }
+    public void gotoRecentOrders(View view)
     {
         startActivity(new Intent(getApplicationContext(),RecentOrders.class));
     }
