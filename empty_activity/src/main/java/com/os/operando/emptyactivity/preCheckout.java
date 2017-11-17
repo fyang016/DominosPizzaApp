@@ -190,9 +190,9 @@ public class preCheckout extends AppCompatActivity {
 
     }
 
-    public void gotoPC(View view)
+    public void gotoOrderPizza(View view)
     {
-        startActivity(new Intent(getApplicationContext(),preCheckout.class));
+        startActivity(new Intent(getApplicationContext(),OrderPizza.class));
     }
     public void gotorecent(View view){
         startActivity(new Intent(getApplicationContext(),MainPage2.class));

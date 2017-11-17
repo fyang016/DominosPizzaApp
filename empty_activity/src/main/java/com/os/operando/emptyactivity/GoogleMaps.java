@@ -200,7 +200,7 @@ public class GoogleMaps extends FragmentActivity implements OnMapReadyCallback,
             googlePlaceUrl.append("&type="+placeType);
         }
         googlePlaceUrl.append("&sensor=true");
-        googlePlaceUrl.append("&key="+"AIzaSyABN9nES7WJ4cYZPaSeWY2gZ5x2RGD2ZVM");
+        googlePlaceUrl.append("&key="+"AIzaSyDZbhdog_C_zEKzq6_wIDRdPzfgN85otUY");
 
         Log.d("GoogleMaps", "url = "+googlePlaceUrl.toString());
 
