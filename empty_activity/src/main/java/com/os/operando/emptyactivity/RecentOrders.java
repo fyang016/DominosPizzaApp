@@ -27,9 +27,19 @@ public class RecentOrders extends AppCompatActivity {
     }
     public void gotoPC(View view)
     {
-        Intent startIntent = new Intent(getApplicationContext(), MainPage2.class);
-        startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        getApplicationContext().startActivity(startIntent);
+        EmailGlobal emailg = ((EmailGlobal)getApplicationContext());
+        String emaillglobe = emailg.getUemail();
+        if(emaillglobe != "") {
+            Intent startIntent = new Intent(getApplicationContext(), MainPage2.class);
+            startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getApplicationContext().startActivity(startIntent);
+        }
+        else
+        {
+            Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+            startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getApplicationContext().startActivity(startIntent);
+        }
     }
 
 }

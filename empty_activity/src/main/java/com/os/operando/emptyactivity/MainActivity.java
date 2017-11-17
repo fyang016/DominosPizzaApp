@@ -20,7 +20,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
+        EmailGlobal emailg = ((EmailGlobal)getApplicationContext());
+        emailg.setUemail("");
         /*
         androidImageButton = (ImageButton) findViewById(R.id.image_button_android);
 
