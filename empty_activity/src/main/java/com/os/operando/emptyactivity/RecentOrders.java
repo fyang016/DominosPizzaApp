@@ -14,11 +14,13 @@ public class RecentOrders extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recent_orders);
         TextView txt = (TextView) findViewById(R.id.textView2);
-        txt.setText("coolio this is your order");
+        DatabaseHelp databaseHelp = new DatabaseHelp(this);
+        String text = databaseHelp.searchTopp("k");
+        txt.setText(text);
 
-        Intent CurInt = getIntent();
+        /*Intent CurInt = getIntent();
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
-        String UserEmail = UserInformation.get(0);
+        String UserEmail = UserInformation.get(0);*/
     }
 
 }

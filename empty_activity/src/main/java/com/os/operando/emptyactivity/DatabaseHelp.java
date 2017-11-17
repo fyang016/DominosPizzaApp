@@ -15,7 +15,7 @@ import java.util.List;
 public class DatabaseHelp extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "UserInfo.db";
+    private static final String DATABASE_NAME = "Try2.db";
     private static final String TABLE_USERS = "Users ";
     private static final String KEY_EMAIL = "Email ";
     private static final String KEY_PASS = "Password ";
@@ -30,10 +30,9 @@ public class DatabaseHelp extends SQLiteOpenHelper {
     private static final String KEY_ID = "OrderID";
     private static final String KEY_TOPPING = "Topping";
     private static final String KEY_AMOUNT = "Amount";
-    private static final String KEY_COST = "Cost";
     private static final String KEY_TIME = "OrderTime ";
-    private static final String CREATE_FAVORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS +" (" +KEY_ID + "primary key AUTO INCREMENT NOT NULL"+KEY_EMAIL +
-            " TEXT FOREIGN KEY NOT NULL, " + KEY_TOPPING + " TEXT ," + KEY_AMOUNT +" TEXT,"+ KEY_COST + " INT, "+ KEY_TIME + " TIME);";
+    private static final String CREATE_FAVORDERS_TABLE = "CREATE TABLE Orders(OrderID INT, Email TEXT, Topping TEXT, Amount TEXT" +
+            ",OrderTime TIME);";
     SQLiteDatabase udbs;
 
     public DatabaseHelp(Context context)
@@ -79,7 +78,6 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         val.put(KEY_EMAIL,logininfo.getEmail());
         val.put(KEY_TOPPING,recentOrdersInfo.getTopping());
         val.put(KEY_AMOUNT,recentOrdersInfo.getAmount());
-        val.put(KEY_COST,recentOrdersInfo.getCost());
         val.put(KEY_TIME, String.valueOf(recentOrdersInfo.getOrdertime()));
 
         udbs.insert(TABLE_ORDERS,null,val);
@@ -127,7 +125,36 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         }
         return loginInfoList;
     }
-
+    public Integer searchID()
+    {
+        udbs = this.getReadableDatabase();
+        String query = "SELECT MAX("+ KEY_ID +") FROM " + TABLE_ORDERS;
+        Cursor cursor = udbs.rawQuery(query, null);
+        Integer ID;
+        ID = 0;
+        if(cursor.moveToFirst())
+        {
+            do{
+                ID=cursor.getInt(0);
+            }while(cursor.moveToNext());
+        }
+        return ID;
+    }
+    public String searchTopp(String email)
+    {
+        udbs = this.getReadableDatabase();
+        String query = "SELECT Topping FROM " + TABLE_ORDERS +" WHERE email = '" + email +"'";
+       Cursor cursor = udbs.rawQuery(query,null);
+        String top = "";
+        if(cursor.moveToFirst())
+        {
+            do{
+                top += cursor.getString(0);
+                top += " ";
+            }while (cursor.moveToNext());
+        }
+        return top;
+    }
     //RC created to check password
     public String searchPass(String email)
     {

@@ -194,6 +194,8 @@ public class preCheckout extends AppCompatActivity {
     {
         startActivity(new Intent(getApplicationContext(),preCheckout.class));
     }
-
+    public void gotorecent(View view){
+        startActivity(new Intent(getApplicationContext(),MainPage2.class));
+    }
 
 }
