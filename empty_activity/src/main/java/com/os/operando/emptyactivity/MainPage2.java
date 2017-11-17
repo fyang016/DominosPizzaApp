@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainPage2 extends Activity {
 
     ImageButton androidImageButton;
@@ -43,34 +45,75 @@ public class MainPage2 extends Activity {
     }
     */
 
+
     // Create a new account/profile
     public void gotoca(View view)
     {
-        startActivity(new Intent(getApplicationContext(),CreateAccount.class));
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle UserBundle =new Bundle();
+        UserBundle.putSerializable("UserInformation", UserInformation);
+        Intent S2intent = new Intent(getApplicationContext(), CreateAccount.class);
+        S2intent.putExtras(UserBundle);
+        startActivity(S2intent);
+
+//        startActivity(new Intent(getApplicationContext(),CreateAccount.class));
     }
 
     public void gotoSignIn2(View view)
     {
-        startActivity(new Intent(getApplicationContext(),SignIn2.class));
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle UserBundle =new Bundle();
+        UserBundle.putSerializable("UserInformation", UserInformation);
+        Intent S2intent = new Intent(getApplicationContext(), SignIn2.class);
+        S2intent.putExtras(UserBundle);
+        startActivity(S2intent);
+//        startActivity(new Intent(getApplicationContext(),SignIn2.class));
     }
 
     public void gototc(View view)
     {
-        startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle UserBundle =new Bundle();
+        UserBundle.putSerializable("UserInformation", UserInformation);
+        Intent S2intent = new Intent(getApplicationContext(), ToppingChoice.class);
+        S2intent.putExtras(UserBundle);
+        startActivity(S2intent);
+//        startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
     }
-    public void gotoro(View view)
-    {
-        startActivity(new Intent(getApplicationContext(),RecentOrders.class));
-    }
+
     public void gotosl(View view) {
-        startActivity(new Intent(getApplicationContext(), StoreList.class));
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle UserBundle =new Bundle();
+        UserBundle.putSerializable("UserInformation", UserInformation);
+        Intent S2intent = new Intent(getApplicationContext(), StoreList.class);
+        S2intent.putExtras(UserBundle);
+        startActivity(S2intent);
+//        startActivity(new Intent(getApplicationContext(), StoreList.class));
     }
     public void gotoLocation(View view)
     {
-        startActivity(new Intent(getApplicationContext(),Location.class));
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle UserBundle =new Bundle();
+        UserBundle.putSerializable("UserInformation", UserInformation);
+        Intent S2intent = new Intent(getApplicationContext(), Location.class);
+        S2intent.putExtras(UserBundle);
+        startActivity(S2intent);
+//        startActivity(new Intent(getApplicationContext(),Location.class));
     }
     public void gotoRecentOrders(View view)
     {
-        startActivity(new Intent(getApplicationContext(),RecentOrders.class));
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle UserBundle =new Bundle();
+        UserBundle.putSerializable("UserInformation", UserInformation);
+        Intent S2intent = new Intent(getApplicationContext(), RecentOrders.class);
+        S2intent.putExtras(UserBundle);
+        startActivity(S2intent);
+//        startActivity(new Intent(getApplicationContext(),RecentOrders.class));
     }
 }
