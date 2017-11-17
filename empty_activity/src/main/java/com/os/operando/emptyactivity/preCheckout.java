@@ -47,6 +47,7 @@ public class preCheckout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_checkout);
 
+        String StringPizza = "";
         Intent CurInt = getIntent();
         ArrayList<String> Pizzas = CurInt.getStringArrayListExtra("Pizzas");
         if(Pizzas != null) {
@@ -63,6 +64,7 @@ public class preCheckout extends AppCompatActivity {
 
                 //Parsing Method
                 String[] ParsedOrder = Full_Order.split(",");
+                StringPizza = StringPizza + ParsedOrder[0];
                 for(String Part : ParsedOrder)
                 {
                     Part = Part.trim();
@@ -102,7 +104,10 @@ public class preCheckout extends AppCompatActivity {
                 ItemPrice = 0;
 
                 // FOR TESTING CHECKING IF ORDER SIZE GOES UP
-                OrderList.setText( "Order SIZE:"+ Integer.toString(Pizzas.size()));
+//                ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+//                OrderList.setText( UserInformation.get(0));
+//                OrderList.setText( "Order SIZE:"+ Integer.toString(Pizzas.size()));
+                OrderList.setText( StringPizza);
             }
             //COUPON~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //            CurInt = getIntent();
@@ -188,6 +193,18 @@ public class preCheckout extends AppCompatActivity {
         Coupon_intent.putExtras(CouponBundle);
         startActivity(Coupon_intent);
 
+    }
+    public void gotoTrack(View view)
+    {
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle PurchaseBundle = new Bundle();
+        PurchaseBundle.putSerializable("Pizzas", TotalOrder);
+        PurchaseBundle.putSerializable("UserInformation", UserInformation);
+
+        Intent Purchase_intent = new Intent(getApplicationContext(),Tracking.class);
+        Purchase_intent.putExtras(PurchaseBundle);
+        startActivity(Purchase_intent);
     }
 
     public void gotoPC(View view)

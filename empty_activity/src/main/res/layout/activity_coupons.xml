@@ -8,11 +8,12 @@
 
     <Button
         android:id="@+id/Coupon1"
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:text="Button"
         android:onClick="CouponOne"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="66dp" />
+        android:text="$5 off on purchase of $7.50  or more"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </android.support.constraint.ConstraintLayout>
