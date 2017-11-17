@@ -1023,7 +1023,7 @@ public class ToppingChoice extends AppCompatActivity {
                 + ", Onion:" + density[onionDensity] + ", Roasted Red Peppers:" + density[roastDensity]
                 + ", Spinach:" + density[spinachDensity] + ", Diced Tomatoes:" + density[dicedDensity]
                 + ", Hot Sauce:" + density[hotDensity] + ", " + SeasonType + ", " + CutType + ", " +
-                BakeType + ", Quantity: " + Integer.toString(quantityCount);
+                BakeType + ", Quantity:" + Integer.toString(quantityCount);
 
         Intent PC_intent = new Intent(getApplicationContext(),preCheckout.class);
         ArrayList<String> Topping;
@@ -1043,6 +1043,13 @@ public class ToppingChoice extends AppCompatActivity {
         PizzaBundle.putSerializable("Pizzas", Topping);
         PC_intent.putExtras(PizzaBundle);
         startActivity(PC_intent);
+//        Topping.add(CurTopping);
+//        Bundle PizzaBundle =CurInt.getExtras();
+//        PizzaBundle.remove("Pizzas");
+//
+//        PizzaBundle.putSerializable("Pizzas", Topping);
+//        PC_intent.putExtras(PizzaBundle);
+//        startActivity(PC_intent);
 
     }
 }

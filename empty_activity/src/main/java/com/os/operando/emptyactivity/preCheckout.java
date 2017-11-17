@@ -15,28 +15,9 @@ import java.util.Map;
 public class preCheckout extends AppCompatActivity {
 
     ArrayList<String> TotalOrder = null;
-
-
+    boolean ApplyCoupon = true;
     Map<String, Integer> items = new HashMap<String,Integer>() {
-        {/*
-            put(200,"Hand Tossed - Small (10\")");
-            put(300,"Hand Tossed - Medium (12\")");
-            put(400,"Hand Tossed - Large (14\")");
-            put(200,"Handmade Pan - Small (10\")");
-            put(300,"Handmade Pan - Medium (12\")");
-            put(400,"Handmade Pan - Large (14\")");
-            put(200,"Crunchy Thin Crust - Small(10\')");
-            put(300,"Crunchy Thin Crust - Medium(12\')");
-            put(400,"Crunchy Thin Crust - Large(14\')");
-            put(300,"Brooklyn Style - Small (10\")");
-            put(400,"Brooklyn Style - Medium (12\")");
-            put(500,"Brooklyn Style - Large (14\")");
-            put(400,"Gluten Free Crust -Small (10\')");
-            put(500,"Gluten Free Crust -Medium (12\')");
-            put(600,"Gluten Free Crust -Large (14\')");
-            */
-
-
+        {
             put("Hand Tossed - Small (10\")", 200);
             put("Hand Tossed - Medium (12\")",300);
             put("Hand Tossed - Large (14\")", 400);
@@ -65,12 +46,15 @@ public class preCheckout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_checkout);
+
         Intent CurInt = getIntent();
         ArrayList<String> Pizzas = CurInt.getStringArrayListExtra("Pizzas");
         if(Pizzas != null) {
             TotalOrder = Pizzas;
             Integer TotalPrice = 0;
-            for(int i = 0; i < Pizzas.size(); i++) {
+            Integer ItemPrice = 0;
+            for(int i = 0; i < Pizzas.size(); i++)
+            {
                 String Full_Order = Pizzas.get(i);
                 Button OrderList = (Button) findViewById(R.id.Order);
                 //how to print out order onto button uncomment
@@ -84,49 +68,82 @@ public class preCheckout extends AppCompatActivity {
                     Part = Part.trim();
                     if(Part.contains("Light" ))
                     {
-                        TotalPrice = TotalPrice+25;
+                        ItemPrice = ItemPrice+25;
                     }
                     else if(Part.contains("Normal"))
                     {
-                        TotalPrice = TotalPrice+50;
+                        ItemPrice = ItemPrice+50;
                     }
                     else if(Part.contains("Extra"))
                     {
-                        TotalPrice = TotalPrice+75;
+                        ItemPrice = ItemPrice+75;
                     }
                     else if(Part.contains("Double"))
                     {
-                        TotalPrice = TotalPrice+100;
+                        ItemPrice = ItemPrice+100;
                     }
                     else if(items.containsKey(Part))
                     {
-                        TotalPrice = TotalPrice+items.get(Part);
+                        ItemPrice = ItemPrice+items.get(Part);
                     }
                     else if(items3.containsKey(Part))
                     {
-                        TotalPrice = TotalPrice+items3.get(Part);
+                        ItemPrice = ItemPrice+items3.get(Part);
                     }
+                    else if(Part.contains("Quantity"))
+                    {
+                        String[] temp = Part.split(":");
+                        ItemPrice = ItemPrice * Integer.parseInt(temp[1]);
+
+                    }
+
                 }
+                TotalPrice = TotalPrice + ItemPrice;
+                ItemPrice = 0;
 
                 // FOR TESTING CHECKING IF ORDER SIZE GOES UP
                 OrderList.setText( "Order SIZE:"+ Integer.toString(Pizzas.size()));
             }
+            //COUPON~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//            CurInt = getIntent();
+//            Pizzas = CurInt.getStringArrayListExtra("MinusFive");
+            if(ApplyCoupon && TotalPrice > 750)
+            {
+                TotalPrice = TotalPrice - 500;
+                ApplyCoupon = false;
+            }
+
             Integer  Dollar = TotalPrice / 100;
             Integer LeftOver = TotalPrice % 100;
             TextView FoodBev = (TextView)findViewById(R.id.textView6);
-            FoodBev.setText("Food/Bev: " +  Integer.toString(Dollar)+"."+Integer.toString(LeftOver));
+            String Holder = "";
+            if(LeftOver < 10)
+            {
+                Holder = "0";
+            }
+            FoodBev.setText("Food/Bev: $" +  Integer.toString(Dollar)+"."+Holder + Integer.toString(LeftOver));
 
             TextView Tax = (TextView)findViewById(R.id.textView7);
             Integer TaxInt = (Integer)(int) ((double)((int)TotalPrice )* .10);
             Dollar = TaxInt / 100;
             LeftOver = TaxInt % 100;
-            Tax.setText("Tax: " +  Integer.toString(Dollar)+"."+Integer.toString(LeftOver));
+            Holder = "";
+            if(LeftOver < 10)
+            {
+                Holder = "0";
+            }
+            Tax.setText("Tax: $" +  Integer.toString(Dollar)+"."+Holder+Integer.toString(LeftOver));
 
             TotalPrice = TotalPrice + TaxInt;
             Dollar = TotalPrice / 100;
             LeftOver = TotalPrice % 100;
             TextView Total = (TextView)findViewById(R.id.textView8);
-            Total.setText("Total: " +  Integer.toString(Dollar)+"."+Integer.toString(LeftOver));
+            Holder = "";
+            if(LeftOver < 10)
+            {
+                Holder = "0";
+            }
+            Total.setText("Total: $" +  Integer.toString(Dollar)+"."+Holder+Integer.toString(LeftOver));
 
         }
         else
@@ -155,9 +172,20 @@ public class preCheckout extends AppCompatActivity {
         //startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
     }
 
+    public void gotoCoupons(View view)
+    {
+        Intent Coupon_intent = new Intent(getApplicationContext(),Coupons.class);
+        Bundle CouponBundle =new Bundle();
+        CouponBundle.putSerializable("Pizzas", TotalOrder);
+        Coupon_intent.putExtras(CouponBundle);
+        startActivity(Coupon_intent);
+
+    }
 
     public void gotoPC(View view)
     {
         startActivity(new Intent(getApplicationContext(),preCheckout.class));
     }
+
+
 }
