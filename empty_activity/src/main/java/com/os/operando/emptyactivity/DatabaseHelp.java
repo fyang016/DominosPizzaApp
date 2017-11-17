@@ -155,6 +155,15 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         return p;
 
     }
+
+    public void UpdatePass(String email, String password){
+//
+        udbs.update(TABLE_USERS,)
+        //udbs = this.getWritableDatabase()
+        //String query = "update "+TABLE_USERS "column = password  where email = ";
+        //udbs.execSQL(query);
+
+    }
     /*
 
 
