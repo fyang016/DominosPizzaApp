@@ -19,7 +19,7 @@ public class MainPage2 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_page2);
 
         /*
         androidImageButton = (ImageButton) findViewById(R.id.image_button_android);
