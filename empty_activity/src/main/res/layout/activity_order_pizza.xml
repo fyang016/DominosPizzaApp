@@ -12,45 +12,12 @@
     tools:context="com.os.operando.emptyactivity.OrderPizza">
 
     <TextView
-        android:text="@string/order_pizza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:layout_marginTop="34dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp" />
-
-    <ImageButton
-        android:id="@+id/coupon_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginTop="21dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/coupons_button" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/order_pizza"
+        android:textAlignment="center" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/coupon_button"
-        android:layout_marginTop="33dp"
-        app:srcCompat="@drawable/menu_button" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_alignRight="@+id/textView"
-        android:layout_below="@+id/imageButton"
-        android:layout_marginTop="16dp"
-        app:srcCompat="@drawable/pizza_with_star" />
 </RelativeLayout>
