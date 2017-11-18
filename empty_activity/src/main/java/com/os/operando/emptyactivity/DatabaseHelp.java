@@ -143,7 +143,7 @@ public class DatabaseHelp extends SQLiteOpenHelper {
     public String searchTopp(String email)
     {
         udbs = this.getReadableDatabase();
-        String query = "SELECT Topping, OrderTime FROM " + TABLE_ORDERS +" WHERE email = '" + email +"'";
+        String query = "SELECT Topping, OrderTime FROM " + TABLE_ORDERS +" WHERE email = '" + email +"' ORDER BY OrderTime ";
        Cursor cursor = udbs.rawQuery(query,null);
         String top = "";
         if(cursor.moveToFirst())
