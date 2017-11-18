@@ -192,6 +192,8 @@ public class preCheckout extends AppCompatActivity {
 
     public void gotoOrderPizza(View view)
     {
+        Intent CurInt = getIntent();
+
         startActivity(new Intent(getApplicationContext(),OrderPizza.class));
     }
     public void gotorecent(View view){
