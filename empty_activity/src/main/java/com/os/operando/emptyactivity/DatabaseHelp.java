@@ -194,12 +194,31 @@ public class DatabaseHelp extends SQLiteOpenHelper {
 
         udbs = this.getWritableDatabase();
         String TABLE = TABLE_USERS;
-        String SET = "set password ="+password;
-        String EMAIL = "where email = "+email;
-        String query = "update 'TABLE' 'SET' 'EMAIL'";
+        String SET = "set password = '"+password + "'";
+        String EMAIL = " where email = '"+email + "'";
+        String query = "update "+ TABLE + SET + EMAIL;
         udbs.execSQL(query);
 
     }
+
+    /*public boolean emailExist(String email) {
+        udbs = this.getReadableDatabase();
+        String query = "SELECT * where email = '" + email + "'";
+        Cursor cursor = udbs.rawQuery(query, null);
+        //e - for email p - password
+        String emailbool;
+        emailbool = "";
+        if (cursor.moveToFirst()) {
+            do {
+                emailbool = cursor.getString(0);
+            }
+            while (cursor.moveToNext());
+        }
+        if (emailbool.equals("")) {
+            return false;
+        }
+        return true;
+    }*/
     /*
 
 
@@ -221,4 +240,4 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         dbs.close();
     }
 */
-}
+    }

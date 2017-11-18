@@ -3,7 +3,7 @@ package com.os.operando.emptyactivity;
 
 import android.app.Application;
 
-class EmailGlobal extends Application {
+public class EmailGlobal extends Application {
     private String uemail;
 
     public String getUemail()

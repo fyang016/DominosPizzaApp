@@ -14,11 +14,11 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <application
+        android:name=".EmailGlobal"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".EmailGlobal"
         android:theme="@style/AppTheme">
         <activity
             android:name=".Splash"
@@ -78,8 +78,10 @@
             android:name=".GoogleMaps"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_google_maps" />
-        <activity android:name=".MainPage2"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".MainPage2" 
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ResetPassword2"
+                  android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
