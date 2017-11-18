@@ -5,7 +5,7 @@ import android.app.Application;
 
 
 public class EmailGlobal extends Application {
-r
+
     private String uemail;
 
     public String getUemail()
