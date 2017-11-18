@@ -34,12 +34,13 @@
         app:srcCompat="@drawable/domino_logo" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/trackbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="42dp"
+        android:onClick="gotoTracking"
         android:text="Check Delivery" />
 
 </RelativeLayout>

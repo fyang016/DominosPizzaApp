@@ -20,6 +20,7 @@ public class StoreList extends AppCompatActivity {
     String[] address, phone, hours;
     // new PassStrings code
     ArrayList< ArrayList<String> > passStrings = new ArrayList< ArrayList<String> >();
+
     // getIntent for PassStrings
 
 
