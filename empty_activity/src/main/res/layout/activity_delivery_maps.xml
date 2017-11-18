@@ -36,7 +36,7 @@
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/B_search"
         android:layout_toRightOf="@+id/B_search"
-        android:onClick="gotoTracking"
+        android:onClick="gotoPreCheckout"
         android:text="Go" />
 
 

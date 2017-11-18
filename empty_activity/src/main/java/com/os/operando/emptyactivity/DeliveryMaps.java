@@ -259,4 +259,13 @@ public class DeliveryMaps extends FragmentActivity implements OnMapReadyCallback
         startActivity(trackingIntent);
     }
 
+    public void gotoPreCheckout(View view) {
+        Intent preCheckoutIntent = new Intent(getApplicationContext(),preCheckout.class);
+
+        preCheckoutIntent.putExtra("orderType", "delivery");
+        preCheckoutIntent.putExtra("latitude", latitude);
+        preCheckoutIntent.putExtra("longitude", longitude);
+        startActivity(preCheckoutIntent);
+    }
+
 }
