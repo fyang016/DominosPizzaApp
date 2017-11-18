@@ -3,6 +3,7 @@ package com.os.operando.emptyactivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -12,7 +13,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class ToppingChoice extends AppCompatActivity {
@@ -1019,14 +1022,17 @@ public class ToppingChoice extends AppCompatActivity {
         EmailGlobal emailg = ((EmailGlobal)getApplicationContext());
         String emaillglobe = emailg.getUemail();
         String uemail = emaillglobe.toString();
+
         if(uemail!="") {
             Integer ID = databasehelp.searchID() + 1;
             Integer quantity1 = quantityCount;
+            java.sql.Date timeNow = new Date(Calendar.getInstance().getTimeInMillis());
             while (quantity1 > 0) {
                 recentOrders.setOrderid(ID);
                 loginInfo.setEmail(uemail);
                 recentOrders.setTopping(PizzaType);
                 recentOrders.setAmount("None");
+                recentOrders.setOrdertime(timeNow);
                 databasehelp.addRecentOrders(recentOrders, loginInfo);
 
 
@@ -1036,6 +1042,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping(SauceType);
                     recentOrders.setAmount(density[sauceDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[cheeseDensity] != "None") {
@@ -1043,6 +1050,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Cheese");
                     recentOrders.setAmount(density[cheeseDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[pepperoniDensity] != "None") {
@@ -1050,6 +1058,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Pepperoni");
                     recentOrders.setAmount(density[pepperoniDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[sausageDensity] != "None") {
@@ -1057,6 +1066,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Italian Sausage");
                     recentOrders.setAmount(density[sausageDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[beefDensity] != "None") {
@@ -1064,6 +1074,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Beef");
                     recentOrders.setAmount(density[beefDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[steakDensity] != "None") {
@@ -1071,6 +1082,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Philly Steak");
                     recentOrders.setAmount(density[steakDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[hamDensity] != "None") {
@@ -1078,6 +1090,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Ham");
                     recentOrders.setAmount(density[hamDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[baconDensity] != "None") {
@@ -1085,6 +1098,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Bacon");
                     recentOrders.setAmount(density[baconDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[salamiDensity] != "None") {
@@ -1092,6 +1106,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Salami");
                     recentOrders.setAmount(density[salamiDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[chickenDensity] != "None") {
@@ -1099,6 +1114,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Premium Chicken");
                     recentOrders.setAmount(density[chickenDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[cheddarDensity] != "None") {
@@ -1106,6 +1122,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Cheddar Cheese");
                     recentOrders.setAmount(density[cheddarDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[fetaDensity] != "None") {
@@ -1113,6 +1130,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Feta Cheese");
                     recentOrders.setAmount(density[fetaDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[parmesanDensity] != "None") {
@@ -1120,6 +1138,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Shredded Parmeasan Asiago");
                     recentOrders.setAmount(density[parmesanDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[provoloneDensity] != "None") {
@@ -1127,6 +1146,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Shredded Provolone Cheese");
                     recentOrders.setAmount(density[provoloneDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[bananaDensity] != "None") {
@@ -1134,6 +1154,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Banana Pepper");
                     recentOrders.setAmount(density[bananaDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[olivesDensity] != "None") {
@@ -1141,6 +1162,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Black Olives");
                     recentOrders.setAmount(density[olivesDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[greenDensity] != "None") {
@@ -1148,6 +1170,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Green Peppers");
                     recentOrders.setAmount(density[greenDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[jalapenoDensity] != "None") {
@@ -1155,6 +1178,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Jalapeno Peppers");
                     recentOrders.setAmount(density[jalapenoDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[mushroomsDensity] != "None") {
@@ -1162,6 +1186,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Mushrooms");
                     recentOrders.setAmount(density[mushroomsDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[pineappleDensity] != "None") {
@@ -1169,6 +1194,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Pineapple");
                     recentOrders.setAmount(density[pineappleDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[onionDensity] != "None") {
@@ -1176,6 +1202,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Onion");
                     recentOrders.setAmount(density[onionDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[roastDensity] != "None") {
@@ -1183,6 +1210,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Roasted Red Peppers");
                     recentOrders.setAmount(density[roastDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[spinachDensity] != "None") {
@@ -1190,6 +1218,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Spinach");
                     recentOrders.setAmount(density[spinachDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[dicedDensity] != "None") {
@@ -1197,6 +1226,7 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Diced Tomatoes");
                     recentOrders.setAmount(density[dicedDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 if (density[hotDensity] != "None") {
@@ -1204,24 +1234,28 @@ public class ToppingChoice extends AppCompatActivity {
                     loginInfo.setEmail(uemail);
                     recentOrders.setTopping("Hot Sauce");
                     recentOrders.setAmount(density[hotDensity]);
+                    recentOrders.setOrdertime(timeNow);
                     databasehelp.addRecentOrders(recentOrders, loginInfo);
                 }
                 recentOrders.setOrderid(ID);
                 loginInfo.setEmail(uemail);
                 recentOrders.setTopping("Seasoning");
                 recentOrders.setAmount(SeasonType);
+                recentOrders.setOrdertime(timeNow);
                 databasehelp.addRecentOrders(recentOrders, loginInfo);
 
                 recentOrders.setOrderid(ID);
                 loginInfo.setEmail(uemail);
                 recentOrders.setTopping("Cut");
                 recentOrders.setAmount(CutType);
+                recentOrders.setOrdertime(timeNow);
                 databasehelp.addRecentOrders(recentOrders, loginInfo);
 
                 recentOrders.setOrderid(ID);
                 loginInfo.setEmail(uemail);
                 recentOrders.setTopping("Bake");
                 recentOrders.setAmount(BakeType);
+                recentOrders.setOrdertime(timeNow);
                 databasehelp.addRecentOrders(recentOrders, loginInfo);
                 quantity1--;
             }

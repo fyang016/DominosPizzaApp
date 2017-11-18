@@ -42,7 +42,7 @@ public class RecentOrders extends AppCompatActivity {
         }
     }
 
-    public void gotoPC(View view)
+    /*public void gotoPC(View view)
     {
         Intent PC_intent = new Intent(getApplicationContext(),preCheckout.class);
         Intent CurInt = getIntent();
@@ -59,6 +59,6 @@ public class RecentOrders extends AppCompatActivity {
 //        PC_intent.putExtras(PizzaBundle);
 //        startActivity(PC_intent);
 
-    }
+    }*/
 
 }

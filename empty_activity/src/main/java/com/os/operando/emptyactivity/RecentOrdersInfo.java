@@ -1,5 +1,6 @@
 package com.os.operando.emptyactivity;
 
+import java.sql.Date;
 import java.sql.Time;
 
 public class RecentOrdersInfo {
@@ -8,12 +9,12 @@ public class RecentOrdersInfo {
     String topping;
     String amount;
     Integer cost;
-    Time ordertime;
+    Date ordertime;
 
     public RecentOrdersInfo()
     {}
 
-    public RecentOrdersInfo(Integer orderid,String email,String topping, String amount, Integer cost,Time ordertime)
+    public RecentOrdersInfo(Integer orderid,String email,String topping, String amount, Integer cost,Date ordertime)
     {
         this.orderid = orderid;
         this.email = email;
@@ -56,11 +57,11 @@ public class RecentOrdersInfo {
         this.amount = amount;
     }
 
-    public Time getOrdertime() {
+    public Date getOrdertime() {
         return ordertime;
     }
 
-    public void setOrdertime(Time ordertime) {
+    public void setOrdertime(Date ordertime) {
         this.ordertime = ordertime;
     }
 
