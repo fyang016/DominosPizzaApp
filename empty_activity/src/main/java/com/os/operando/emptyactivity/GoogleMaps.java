@@ -100,6 +100,10 @@ public class GoogleMaps extends FragmentActivity implements OnMapReadyCallback,
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        LatLng latLng = new LatLng(42.215002,-82.934421);
+        float zoom = 2.0f;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,zoom));
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             bulidGoogleApiClient();
             mMap.setMyLocationEnabled(true);
@@ -196,7 +200,7 @@ public class GoogleMaps extends FragmentActivity implements OnMapReadyCallback,
             googlePlaceUrl.append("&type="+placeType);
         }
         googlePlaceUrl.append("&sensor=true");
-        googlePlaceUrl.append("&key="+"AIzaSyABN9nES7WJ4cYZPaSeWY2gZ5x2RGD2ZVM");
+        googlePlaceUrl.append("&key="+"AIzaSyDZbhdog_C_zEKzq6_wIDRdPzfgN85otUY");
 
         Log.d("GoogleMaps", "url = "+googlePlaceUrl.toString());
 

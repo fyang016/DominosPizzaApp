@@ -7,21 +7,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.os.operando.emptyactivity.MainPage2">
+    tools:context="com.os.operando.emptyactivity.MainPage2"
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
 
-
-
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:text="@string/app_content"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintLeft_toLeftOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton3"

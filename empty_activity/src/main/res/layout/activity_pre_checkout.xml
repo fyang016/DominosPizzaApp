@@ -5,7 +5,9 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.os.operando.emptyactivity.preCheckout">
+    tools:context="com.os.operando.emptyactivity.preCheckout"
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
 
 
     <TextView
@@ -21,33 +23,24 @@
 
     <ImageButton
         android:id="@+id/imageButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
+        android:layout_width="145dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="120dp"
+        android:onClick="gotoCoupons"
         app:layout_constraintLeft_toRightOf="@+id/imageButton8"
         app:layout_constraintStart_toEndOf="@+id/imageButton8"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="gotoCoupons"
         app:srcCompat="@drawable/coupons_button" />
 
     <ImageButton
         android:id="@+id/imageButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="141dp"
+        android:layout_height="42dp"
+        android:onClick="gototc"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="gototc"
         app:srcCompat="@drawable/menu_button" />
-
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="54dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton7"
-        app:layout_constraintStart_toEndOf="@+id/imageButton7"
-        app:srcCompat="@drawable/red_white_shopping_cart" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
@@ -90,14 +83,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="7dp"
+        android:layout_marginLeft="7dp"
         android:layout_marginRight="7dp"
         android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
         android:layout_marginTop="396dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="gotoTrack"
+
+        android:onClick="gotoOrderPizza"
         app:srcCompat="@drawable/place_your_order" />
 
     <Button
@@ -105,12 +99,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="7dp"
-        android:layout_marginRight="7dp"
         android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.989"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="446dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.os.operando.emptyactivity.SignIn2">
+    tools:context="com.os.operando.emptyactivity.SignIn2"
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
 
     <EditText
         android:id="@+id/etEmail"
@@ -98,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/tVEmailAddress"
         app:layout_constraintVertical_bias="0.113" />
 
     <Button
@@ -125,19 +127,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="300dp"
         android:text="Forgot your password?"
+        android:onClick="gotofp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/cbKeep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="151dp"
-        android:text="Keep Me Signed IN"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

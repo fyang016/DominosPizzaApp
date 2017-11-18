@@ -33,14 +33,16 @@ public class SignIn2 extends AppCompatActivity {
         }
         else
         {
-            Intent S2intent = new Intent(getApplicationContext(), MainPage2.class);
+            EmailGlobal emailg = ((EmailGlobal)getApplicationContext());
+            emailg.setUemail(emailst);
+            /*Intent S2intent = new Intent(getApplicationContext(), MainPage2.class);
             ArrayList<String> UserInformation = new ArrayList<String>();
             UserInformation.add(emailst);
             Bundle UserBundle =new Bundle();
             UserBundle.putSerializable("UserInformation", UserInformation);
-            S2intent.putExtras(UserBundle);
-            startActivity(S2intent);
-            //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            S2intent.putExtras(UserBundle);*/
+            //startActivity(S2intent);
+            startActivity(new Intent(getApplicationContext(),MainPage2.class));
         }
 
 
@@ -79,5 +81,9 @@ public class SignIn2 extends AppCompatActivity {
     public void gotoca(View view)
     {
         startActivity(new Intent(getApplicationContext(),CreateAccount.class));
+    }
+    public void gotofp(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),ResetPassword2.class));
     }
 }

@@ -14,6 +14,7 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <application
+        android:name=".EmailGlobal"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,32 +22,46 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Splash"
-            android:label="@string/DominosPizzaApp">
+            android:label="@string/DominosPizzaApp"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CreateAccount"
             android:label="@string/title_activity_create_account"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".OrderPizza" />
-        <activity android:name=".preCheckout" />
-        <activity android:name=".Coupons" />
-        <activity android:name=".RecentOrders" />
-        <activity android:name=".SignIn2" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".OrderPizza"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".preCheckout"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Coupons"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RecentOrders"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SignIn2"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ToppingChoice"
             android:label="ToppingChoice"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Location" />
-        <activity android:name=".StoreList" />
-        <activity android:name=".StoreDetails" />
-        <activity android:name=".DeliveryMaps" />
-        <activity android:name=".Tracking" />
+        <activity android:name=".Location"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StoreList"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StoreDetails"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DeliveryMaps"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Tracking"
+            android:screenOrientation="portrait"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -61,8 +76,12 @@
 
         <activity
             android:name=".GoogleMaps"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_google_maps" />
-        <activity android:name=".MainPage2"></activity>
+        <activity android:name=".MainPage2" 
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ResetPassword2"
+                  android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
