@@ -15,30 +15,50 @@ public class RecentOrders extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recent_orders);
         TextView txt = (TextView) findViewById(R.id.textView2);
-        txt.setText("coolio this is your order");
+        DatabaseHelp databaseHelp = new DatabaseHelp(this);
+        EmailGlobal emailg = ((EmailGlobal)getApplicationContext());
+        String emaillglobe = emailg.getUemail();
+        String text = databaseHelp.searchTopp(emaillglobe.toString());
+        txt.setText(text);
 
-        Intent CurInt = getIntent();
+        /*Intent CurInt = getIntent();
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
-        String UserEmail = UserInformation.get(0);
+        String UserEmail = UserInformation.get(0);*/
     }
-
     public void gotoPC(View view)
     {
-        Intent PC_intent = new Intent(getApplicationContext(),preCheckout.class);
-        Intent CurInt = getIntent();
-        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
-        Bundle PizzaBundle =new Bundle();
-        PizzaBundle.putSerializable("UserInformation", UserInformation);
-        PC_intent.putExtras(PizzaBundle);
-        startActivity(PC_intent);
-//        Topping.add(CurTopping);
-//        Bundle PizzaBundle =CurInt.getExtras();
-//        PizzaBundle.remove("Pizzas");
-//
-//        PizzaBundle.putSerializable("Pizzas", Topping);
+        EmailGlobal emailg = ((EmailGlobal)getApplicationContext());
+        String emaillglobe = emailg.getUemail();
+        if(emaillglobe != "") {
+            Intent startIntent = new Intent(getApplicationContext(), MainPage2.class);
+            startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getApplicationContext().startActivity(startIntent);
+        }
+        else
+        {
+            Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+            startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getApplicationContext().startActivity(startIntent);
+        }
+    }
+
+//    public void gotoPC(View view)
+//    {
+//        Intent PC_intent = new Intent(getApplicationContext(),preCheckout.class);
+//        Intent CurInt = getIntent();
+//        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+//        Bundle PizzaBundle =new Bundle();
+//        PizzaBundle.putSerializable("UserInformation", UserInformation);
 //        PC_intent.putExtras(PizzaBundle);
 //        startActivity(PC_intent);
-
-    }
+////        Topping.add(CurTopping);
+////        Bundle PizzaBundle =CurInt.getExtras();
+////        PizzaBundle.remove("Pizzas");
+////
+////        PizzaBundle.putSerializable("Pizzas", Topping);
+////        PC_intent.putExtras(PizzaBundle);
+////        startActivity(PC_intent);
+//
+//    }
 
 }

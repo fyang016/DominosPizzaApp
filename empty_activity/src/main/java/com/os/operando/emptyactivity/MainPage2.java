@@ -22,7 +22,12 @@ public class MainPage2 extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main_page2);
-
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle UserBundle =new Bundle();
+        UserBundle.putSerializable("UserInformation", UserInformation);
+        Intent S2intent = new Intent(getApplicationContext(), CreateAccount.class);
+        S2intent.putExtras(UserBundle);
         /*
         androidImageButton = (ImageButton) findViewById(R.id.image_button_android);
 
@@ -62,14 +67,19 @@ public class MainPage2 extends Activity {
 
     public void gotoSignIn2(View view)
     {
-        Intent CurInt = getIntent();
+        EmailGlobal emailg = ((EmailGlobal)getApplicationContext());
+        emailg.setUemail("");
+        /*Intent CurInt = getIntent();
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
         Bundle UserBundle =new Bundle();
         UserBundle.putSerializable("UserInformation", UserInformation);
-        Intent S2intent = new Intent(getApplicationContext(), SignIn2.class);
+        Intent S2intent = new Intent(getApplicationContext(), MainActivity.class);
         S2intent.putExtras(UserBundle);
         startActivity(S2intent);
-//        startActivity(new Intent(getApplicationContext(),SignIn2.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));*/
+        Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(startIntent);
     }
 
     public void gototc(View view)

@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -1009,17 +1010,222 @@ public class ToppingChoice extends AppCompatActivity {
 
     public void gotoPC(View view)
     {
-        Intent startIntent = new Intent(getApplicationContext(), LoginInfo.class);
+        //Intent startIntent = new Intent(getApplicationContext(), LoginInfo.class);
         //Intent
         //String uname = startIntent.getEmail();
-        RecentOrdersInfo recentOrders = new RecentOrdersInfo();
-        recentOrders.setTopping(PizzaType);
-        recentOrders.setAmount("None");
-        if(density[sauceDensity]!="None")
-        {
-            recentOrders.setTopping(SauceType);
-            recentOrders.setAmount(density[sausageDensity]);
 
+        RecentOrdersInfo recentOrders = new RecentOrdersInfo();
+        LoginInfo loginInfo = new LoginInfo();
+        EmailGlobal emailg = ((EmailGlobal)getApplicationContext());
+        String emaillglobe = emailg.getUemail();
+        String uemail = emaillglobe.toString();
+        if(uemail!="") {
+            Integer ID = databasehelp.searchID() + 1;
+            Integer quantity1 = quantityCount;
+            while (quantity1 > 0) {
+                recentOrders.setOrderid(ID);
+                loginInfo.setEmail(uemail);
+                recentOrders.setTopping(PizzaType);
+                recentOrders.setAmount("None");
+                databasehelp.addRecentOrders(recentOrders, loginInfo);
+                Toast mail = Toast.makeText(ToppingChoice.this, "BOO", Toast.LENGTH_SHORT);
+                mail.show();
+
+
+                if (density[sauceDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping(SauceType);
+                    recentOrders.setAmount(density[sauceDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[cheeseDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Cheese");
+                    recentOrders.setAmount(density[cheeseDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[pepperoniDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Pepperoni");
+                    recentOrders.setAmount(density[pepperoniDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[sausageDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Italian Sausage");
+                    recentOrders.setAmount(density[sausageDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[beefDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Beef");
+                    recentOrders.setAmount(density[beefDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[steakDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Philly Steak");
+                    recentOrders.setAmount(density[steakDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[hamDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Ham");
+                    recentOrders.setAmount(density[hamDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[baconDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Bacon");
+                    recentOrders.setAmount(density[baconDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[salamiDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Salami");
+                    recentOrders.setAmount(density[salamiDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[chickenDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Premium Chicken");
+                    recentOrders.setAmount(density[chickenDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[cheddarDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Cheddar Cheese");
+                    recentOrders.setAmount(density[cheddarDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[fetaDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Feta Cheese");
+                    recentOrders.setAmount(density[fetaDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[parmesanDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Shredded Parmeasan Asiago");
+                    recentOrders.setAmount(density[parmesanDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[provoloneDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Shredded Provolone Cheese");
+                    recentOrders.setAmount(density[provoloneDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[bananaDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Banana Pepper");
+                    recentOrders.setAmount(density[bananaDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[olivesDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Black Olives");
+                    recentOrders.setAmount(density[olivesDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[greenDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Green Peppers");
+                    recentOrders.setAmount(density[greenDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[jalapenoDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Jalapeno Peppers");
+                    recentOrders.setAmount(density[jalapenoDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[mushroomsDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Mushrooms");
+                    recentOrders.setAmount(density[mushroomsDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[pineappleDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Pineapple");
+                    recentOrders.setAmount(density[pineappleDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[onionDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Onion");
+                    recentOrders.setAmount(density[onionDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[roastDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Roasted Red Peppers");
+                    recentOrders.setAmount(density[roastDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[spinachDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Spinach");
+                    recentOrders.setAmount(density[spinachDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[dicedDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Diced Tomatoes");
+                    recentOrders.setAmount(density[dicedDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                if (density[hotDensity] != "None") {
+                    recentOrders.setOrderid(ID);
+                    loginInfo.setEmail(uemail);
+                    recentOrders.setTopping("Hot Sauce");
+                    recentOrders.setAmount(density[hotDensity]);
+                    databasehelp.addRecentOrders(recentOrders, loginInfo);
+                }
+                recentOrders.setOrderid(ID);
+                loginInfo.setEmail(uemail);
+                recentOrders.setTopping("Seasoning");
+                recentOrders.setAmount(SeasonType);
+                databasehelp.addRecentOrders(recentOrders, loginInfo);
+
+                recentOrders.setOrderid(ID);
+                loginInfo.setEmail(uemail);
+                recentOrders.setTopping("Cut");
+                recentOrders.setAmount(CutType);
+                databasehelp.addRecentOrders(recentOrders, loginInfo);
+
+                recentOrders.setOrderid(ID);
+                loginInfo.setEmail(uemail);
+                recentOrders.setTopping("Bake");
+                recentOrders.setAmount(BakeType);
+                databasehelp.addRecentOrders(recentOrders, loginInfo);
+                quantity1--;
+            }
         }
 
         String CurTopping =  PizzaType + ", " + SauceType +":"+ density[sauceDensity]
@@ -1054,9 +1260,13 @@ public class ToppingChoice extends AppCompatActivity {
         }
         Topping.add(CurTopping);
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        ArrayList<String> Minus = CurInt.getStringArrayListExtra("MinusFive");
+        ArrayList<String> Percent = CurInt.getStringArrayListExtra("Fifty");
         Bundle PizzaBundle =new Bundle();
         PizzaBundle.putSerializable("Pizzas", Topping);
         PizzaBundle.putSerializable("UserInformation", UserInformation);
+        PizzaBundle.putSerializable("MinusFive", Minus);
+        PizzaBundle.putSerializable("Fifty", Percent);
         PC_intent.putExtras(PizzaBundle);
         startActivity(PC_intent);
 //        Topping.add(CurTopping);

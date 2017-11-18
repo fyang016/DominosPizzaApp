@@ -8,12 +8,39 @@
 
     <Button
         android:id="@+id/Coupon1"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
+        android:layout_width="208dp"
+        android:layout_height="146dp"
+        android:layout_marginBottom="52dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/five_dollars_off"
         android:onClick="CouponOne"
-        android:text="$5 off on purchase of $7.50  or more"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toTopOf="@+id/Coupon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Coupon2"
+        android:layout_width="246dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/fifty_percent_off"
+        android:onClick="CouponTwo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.418"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Coupons"
+        app:layout_constraintBottom_toTopOf="@+id/Coupon1"
+        tools:layout_editor_absoluteX="145dp" />
 
 </android.support.constraint.ConstraintLayout>

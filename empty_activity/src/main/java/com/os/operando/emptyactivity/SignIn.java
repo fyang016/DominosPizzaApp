@@ -50,6 +50,7 @@ public class SignIn extends AppCompatActivity {
         Keep = (CheckBox)findViewById(R.id.cbKeep);
         Info = (TextView)findViewById(R.id.tvInfo);
 
+
         SignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

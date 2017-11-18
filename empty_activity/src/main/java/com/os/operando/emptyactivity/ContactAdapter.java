@@ -74,6 +74,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             intent.putExtra("address",contact.getAddress());
             intent.putExtra("phone", contact.getPhone());
             intent.putExtra("hours", contact.getHours());
+            // new passStrings code
+            intent.putExtra("passStrings", contact.getPassStrings());
             this.ctx.startActivity(intent);
         }
     }

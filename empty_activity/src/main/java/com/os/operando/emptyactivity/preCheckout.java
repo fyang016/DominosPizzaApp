@@ -50,6 +50,8 @@ public class preCheckout extends AppCompatActivity {
         String StringPizza = "";
         Intent CurInt = getIntent();
         ArrayList<String> Pizzas = CurInt.getStringArrayListExtra("Pizzas");
+        ArrayList<String> CouponUsed = null;
+        ArrayList<String> CouponFive = CurInt.getStringArrayListExtra("MinusFive");
         if(Pizzas != null) {
             TotalOrder = Pizzas;
             Integer TotalPrice = 0;
@@ -95,7 +97,24 @@ public class preCheckout extends AppCompatActivity {
                     else if(Part.contains("Quantity"))
                     {
                         String[] temp = Part.split(":");
-                        ItemPrice = ItemPrice * Integer.parseInt(temp[1]);
+                        ArrayList<String> Fifty = CurInt.getStringArrayListExtra("Fifty");
+
+                        if(ApplyCoupon && Fifty != null && CouponUsed == null )
+                        {
+
+                            CouponUsed = new ArrayList<String>();
+                            CouponUsed.add("USED");
+
+                            Integer SinglePrice = ItemPrice/2;
+                            ItemPrice = ItemPrice * (Integer.parseInt(temp[1]) - 1 );
+                            ItemPrice = ItemPrice + SinglePrice;
+                            ApplyCoupon = false;
+                        }
+                        else
+                        {
+                            ItemPrice = ItemPrice * Integer.parseInt(temp[1]);
+                        }
+
 
                     }
 
@@ -111,12 +130,13 @@ public class preCheckout extends AppCompatActivity {
             }
             //COUPON~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //            CurInt = getIntent();
-//            Pizzas = CurInt.getStringArrayListExtra("MinusFive");
-            if(ApplyCoupon && TotalPrice > 750)
+
+            if(ApplyCoupon && CouponFive != null && TotalPrice > 750 && CouponUsed == null)
             {
                 TotalPrice = TotalPrice - 500;
                 ApplyCoupon = false;
             }
+
 
             Integer  Dollar = TotalPrice / 100;
             Integer LeftOver = TotalPrice % 100;
@@ -171,11 +191,24 @@ public class preCheckout extends AppCompatActivity {
     {
         Intent CurInt = getIntent();
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
-
+        ArrayList<String>  CouponUsed =  CurInt.getStringArrayListExtra("CouponUsed");
+        ArrayList<String> Minus = CurInt.getStringArrayListExtra("MinusFive");
+        ArrayList<String> Percent = CurInt.getStringArrayListExtra("Fifty");
+        if(!ApplyCoupon)
+        {
+            if(CouponUsed == null)
+            {
+                CouponUsed = new ArrayList<String>();
+            }
+            CouponUsed.add("Used");
+        }
         Intent TC_intent = new Intent(getApplicationContext(),ToppingChoice.class);
         Bundle PizzaBundle =new Bundle();
         PizzaBundle.putSerializable("Pizzas", TotalOrder);
         PizzaBundle.putSerializable("UserInformation", UserInformation);
+        PizzaBundle.putSerializable("CouponUsed", CouponUsed);
+        PizzaBundle.putSerializable("Fifty", Percent);
+        PizzaBundle.putSerializable("MinusFive", Minus);
         TC_intent.putExtras(PizzaBundle);
         startActivity(TC_intent);
         //startActivity(new Intent(getApplicationContext(),ToppingChoice.class));
@@ -185,11 +218,22 @@ public class preCheckout extends AppCompatActivity {
     {
         Intent CurInt = getIntent();
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        ArrayList<String>  CouponUsed =  CurInt.getStringArrayListExtra("CouponUsed");
+        if(!ApplyCoupon)
+        {
+            if(CouponUsed == null)
+            {
+                CouponUsed = new ArrayList<String>();
+            }
+            CouponUsed.add("Used");
+        }
+
 
         Intent Coupon_intent = new Intent(getApplicationContext(),Coupons.class);
         Bundle CouponBundle =new Bundle();
         CouponBundle.putSerializable("Pizzas", TotalOrder);
         CouponBundle.putSerializable("UserInformation", UserInformation);
+        CouponBundle.putSerializable("CouponUsed", CouponUsed);
         Coupon_intent.putExtras(CouponBundle);
         startActivity(Coupon_intent);
 
@@ -198,12 +242,22 @@ public class preCheckout extends AppCompatActivity {
     {
         Intent CurInt = getIntent();
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        ArrayList<String>  CouponUsed =  CurInt.getStringArrayListExtra("CouponUsed");
+//        if(!ApplyCoupon)
+//        {
+//                if(CouponUsed == null)
+//                {
+//                    CouponUsed = new ArrayList<String>();
+//                }
+//            CouponUsed.add("Used");
+//        }
         Bundle PurchaseBundle = new Bundle();
         PurchaseBundle.putSerializable("Pizzas", TotalOrder);
         PurchaseBundle.putSerializable("UserInformation", UserInformation);
+        PurchaseBundle.putSerializable("CouponUsed", CouponUsed);
 
         Intent Purchase_intent = new Intent(getApplicationContext(),Tracking.class);
-        Purchase_intent.putExtras(PurchaseBundle);
+//        Purchase_intent.putExtras(PurchaseBundle);
         startActivity(Purchase_intent);
     }
 
@@ -211,6 +265,8 @@ public class preCheckout extends AppCompatActivity {
     {
         startActivity(new Intent(getApplicationContext(),preCheckout.class));
     }
-
+    public void gotorecent(View view){
+        startActivity(new Intent(getApplicationContext(),MainPage2.class));
+    }
 
 }

@@ -30,10 +30,30 @@ public class Coupons extends AppCompatActivity {
         CouponBundle.remove("MinusFive");
         Intent PC_intent = new Intent(getApplicationContext(),preCheckout.class);
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        ArrayList<String>  CouponUsed =  CurInt.getStringArrayListExtra("CouponUsed");
+
         ArrayList<String> Coupon = new ArrayList<String>();
         Coupon.add("Minus 5");
         CouponBundle.putSerializable("MinusFive", Coupon );
         CouponBundle.putSerializable("UserInformation", UserInformation);
+        CouponBundle.putSerializable("CouponUsed", CouponUsed);
+        PC_intent.putExtras(CouponBundle);
+        startActivity(PC_intent);
+    }
+    public void CouponTwo (View view)
+    {
+        Intent CurInt = getIntent();
+        Bundle CouponBundle = CurInt.getExtras();
+        CouponBundle.remove("Fifty");
+        Intent PC_intent = new Intent(getApplicationContext(),preCheckout.class);
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        ArrayList<String>  CouponUsed =  CurInt.getStringArrayListExtra("CouponUsed");
+
+        ArrayList<String> Coupon = new ArrayList<String>();
+        Coupon.add("Fifty % OFF");
+        CouponBundle.putSerializable("Fifty", Coupon );
+        CouponBundle.putSerializable("UserInformation", UserInformation);
+        CouponBundle.putSerializable("CouponUsed", CouponUsed);
         PC_intent.putExtras(CouponBundle);
         startActivity(PC_intent);
     }
