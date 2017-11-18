@@ -194,6 +194,7 @@ public class DatabaseHelp extends SQLiteOpenHelper {
 
         udbs = this.getWritableDatabase();
         String TABLE = TABLE_USERS;
+
         String SET = "set password = '"+password + "'";
         String EMAIL = " where email = '"+email + "'";
         String query = "update "+ TABLE + SET + EMAIL;

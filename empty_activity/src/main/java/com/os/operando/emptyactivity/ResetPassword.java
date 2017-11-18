@@ -8,25 +8,32 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import android.widget.Toast;
+
 
 public class ResetPassword extends AppCompatActivity {
 
     DatabaseHelp help = new DatabaseHelp(this);
 
+
     /*private EditText tFNewPassword;
+
     private EditText tFConfirmPassword;
     private TextView NewPassword;
     private TextView ConfirmPassword;
     private Button SavePassword;
     private TextView PassIncorrect;
     private TextView EmailAddress;
+
     private EditText tFEmailAddress;*/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
+
 
         //NewPassword = (TextView) findViewById(R.id.tvComment1);
         //ConfirmPassword = (TextView) findViewById(R.id.tVConfirmPassword);
@@ -58,11 +65,13 @@ public class ResetPassword extends AppCompatActivity {
             Toast error = Toast.makeText(ResetPassword.this,"Email does not exist, Please create an account",Toast.LENGTH_SHORT );
             error.show();
         }*/
+
     }
 
        // ResetPassword.setOnClickListener(new View.OnClickListener() {
          //   @Override
            // public void onClick(View v) {
+
     private boolean checkPassword(String Password1, String Password2,String email){
 
         //EditText email = (EditText)findViewById(R.id.tfEmailAddress);
@@ -71,8 +80,10 @@ public class ResetPassword extends AppCompatActivity {
         //String emailst = email.getText().toString();
 
 
+
         //check if passwords are the same
         if(Password1 == Password2){
+
             help.UpdatePass(email, Password2);
             return true;
 
@@ -81,6 +92,7 @@ public class ResetPassword extends AppCompatActivity {
         } else
             {
                 return false;
+
 
             }
     }

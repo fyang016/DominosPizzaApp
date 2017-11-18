@@ -25,7 +25,9 @@
         android:id="@+id/imageButton7"
         android:layout_width="145dp"
         android:layout_height="42dp"
+
         android:layout_marginTop="120dp"
+
         android:onClick="gotoCoupons"
         app:layout_constraintLeft_toRightOf="@+id/imageButton8"
         app:layout_constraintStart_toEndOf="@+id/imageButton8"
@@ -69,8 +71,8 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="36dp"
-        android:layout_height="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginTop="352dp"
@@ -100,9 +102,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="7dp"
         android:layout_marginStart="7dp"
+
         android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.989"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

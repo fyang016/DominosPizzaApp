@@ -1259,9 +1259,13 @@ public class ToppingChoice extends AppCompatActivity {
         }
         Topping.add(CurTopping);
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        ArrayList<String> Minus = CurInt.getStringArrayListExtra("MinusFive");
+        ArrayList<String> Percent = CurInt.getStringArrayListExtra("Fifty");
         Bundle PizzaBundle =new Bundle();
         PizzaBundle.putSerializable("Pizzas", Topping);
         PizzaBundle.putSerializable("UserInformation", UserInformation);
+        PizzaBundle.putSerializable("MinusFive", Minus);
+        PizzaBundle.putSerializable("Fifty", Percent);
         PC_intent.putExtras(PizzaBundle);
         startActivity(PC_intent);
 //        Topping.add(CurTopping);
