@@ -1028,8 +1028,7 @@ public class ToppingChoice extends AppCompatActivity {
                 recentOrders.setTopping(PizzaType);
                 recentOrders.setAmount("None");
                 databasehelp.addRecentOrders(recentOrders, loginInfo);
-                Toast mail = Toast.makeText(ToppingChoice.this, "BOO", Toast.LENGTH_SHORT);
-                mail.show();
+
 
 
                 if (density[sauceDensity] != "None") {
