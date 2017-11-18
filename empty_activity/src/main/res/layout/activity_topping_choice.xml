@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activity_topping_choice"
-    tools:context="com.os.operando.emptyactivity.ToppingChoice">
+    tools:context="com.os.operando.emptyactivity.ToppingChoice"
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
 
     <ScrollView
         android:layout_width="match_parent"

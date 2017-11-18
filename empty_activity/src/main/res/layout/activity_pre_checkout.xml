@@ -5,7 +5,9 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.os.operando.emptyactivity.preCheckout">
+    tools:context="com.os.operando.emptyactivity.preCheckout"
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
 
 
     <TextView
@@ -23,7 +25,9 @@
         android:id="@+id/imageButton7"
         android:layout_width="145dp"
         android:layout_height="42dp"
-        android:layout_marginTop="16dp"
+
+        android:layout_marginTop="120dp"
+
         android:onClick="gotoCoupons"
         app:layout_constraintLeft_toRightOf="@+id/imageButton8"
         app:layout_constraintStart_toEndOf="@+id/imageButton8"
@@ -88,7 +92,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="gotoTrack"
+
+        android:onClick="gotoOrderPizza"
         app:srcCompat="@drawable/place_your_order" />
 
     <Button
@@ -97,9 +102,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="7dp"
         android:layout_marginStart="7dp"
-        android:layout_marginTop="116dp"
+
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.429"
+        app:layout_constraintHorizontal_bias="0.989"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

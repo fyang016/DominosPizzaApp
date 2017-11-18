@@ -7,7 +7,9 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.os.operando.emptyactivity.StoreList">
+    tools:context="com.os.operando.emptyactivity.StoreList"
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
 
     <Button
         android:layout_width="match_parent"

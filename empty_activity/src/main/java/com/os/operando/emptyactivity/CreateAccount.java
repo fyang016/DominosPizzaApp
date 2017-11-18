@@ -68,8 +68,6 @@ public class CreateAccount extends AppCompatActivity {
                     account.setLastName(lname);
                     account.setPhoneNumber(pnstr);
                     databasehelp.addUsers(account);
-                    Toast mail = Toast.makeText(CreateAccount.this, "BOO", Toast.LENGTH_SHORT);
-                    mail.show();
                     databasehelp.allUsers();
 
                     Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);

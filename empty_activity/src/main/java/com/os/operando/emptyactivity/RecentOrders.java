@@ -24,6 +24,7 @@ public class RecentOrders extends AppCompatActivity {
         /*Intent CurInt = getIntent();
         ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
         String UserEmail = UserInformation.get(0);*/
+
     }
     public void gotoPC(View view)
     {
