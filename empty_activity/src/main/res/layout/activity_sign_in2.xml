@@ -125,6 +125,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="300dp"
         android:text="Forgot your password?"
+        android:onClick="gotofp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
