@@ -264,8 +264,26 @@ public class preCheckout extends AppCompatActivity {
     public void gotoOrderPizza(View view)
     {
         Intent CurInt = getIntent();
+        String orderType = CurInt.getStringExtra("orderType");
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        ArrayList<String>  CouponUsed =  CurInt.getStringArrayListExtra("CouponUsed");
+//        if(!ApplyCoupon)
+//        {
+//                if(CouponUsed == null)
+//                {
+//                    CouponUsed = new ArrayList<String>();
+//                }
+//            CouponUsed.add("Used");
+//        }
+        Bundle PurchaseBundle = new Bundle();
+        PurchaseBundle.putSerializable("Pizzas", TotalOrder);
+        PurchaseBundle.putSerializable("UserInformation", UserInformation);
+        PurchaseBundle.putSerializable("CouponUsed", CouponUsed);
 
-        startActivity(new Intent(getApplicationContext(),OrderPizza.class));
+        Intent Purchase_intent = new Intent(getApplicationContext(),OrderPizza.class);
+        Purchase_intent.putExtra("orderType", orderType);
+//        Purchase_intent.putExtras(PurchaseBundle);
+        startActivity(Purchase_intent);
     }
     public void gotorecent(View view){
         startActivity(new Intent(getApplicationContext(),MainPage2.class));
