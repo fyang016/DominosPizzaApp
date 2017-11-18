@@ -841,7 +841,7 @@ public class ToppingChoice extends AppCompatActivity {
         //Plus
         txtOnions = (EditText)findViewById(R.id.textOnion2);
         txtOnions.setText(String.valueOf(density[onionDensity]));
-        btnOnions = (Button)findViewById(R.id.plus22);
+        btnOnions = (Button)findViewById(R.id.plusO);
 
         btnOnions.setOnClickListener(new OnClickListener() {
                                          public void onClick(View arg0) {
@@ -856,7 +856,7 @@ public class ToppingChoice extends AppCompatActivity {
         //Minus
         txtOnions = (EditText)findViewById(R.id.textOnion2);
         txtOnions.setText(String.valueOf(density[onionDensity]));
-        btnOnions = (Button)findViewById(R.id.minus22);
+        btnOnions = (Button)findViewById(R.id.minusO);
 
         btnOnions.setOnClickListener(new OnClickListener() {
                                          public void onClick(View arg0) {
