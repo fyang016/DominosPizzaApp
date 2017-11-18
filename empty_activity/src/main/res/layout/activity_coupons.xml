@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.os.operando.emptyactivity.Coupons">
+    tools:context="com.os.operando.emptyactivity.Coupons"
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
 
     <Button
         android:id="@+id/Coupon1"
+
         android:layout_width="208dp"
         android:layout_height="146dp"
         android:layout_marginBottom="52dp"
@@ -41,5 +44,6 @@
         android:text="Coupons"
         app:layout_constraintBottom_toTopOf="@+id/Coupon1"
         tools:layout_editor_absoluteX="145dp" />
+
 
 </android.support.constraint.ConstraintLayout>
