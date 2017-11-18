@@ -195,7 +195,9 @@ public class DeliveryMaps extends FragmentActivity implements OnMapReadyCallback
         googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
         googlePlaceUrl.append("&type="+nearbyPlace);
         googlePlaceUrl.append("&sensor=true");
+
         googlePlaceUrl.append("&key="+"AIzaSyDZbhdog_C_zEKzq6_wIDRdPzfgN85otUY");
+
 
         Log.d("DeliveryMaps", "url = "+googlePlaceUrl.toString());
 
@@ -255,6 +257,15 @@ public class DeliveryMaps extends FragmentActivity implements OnMapReadyCallback
         trackingIntent.putExtra("longitude",longitude);
 
         startActivity(trackingIntent);
+    }
+
+    public void gotoPreCheckout(View view) {
+        Intent preCheckoutIntent = new Intent(getApplicationContext(),preCheckout.class);
+
+        preCheckoutIntent.putExtra("orderType", "delivery");
+        preCheckoutIntent.putExtra("latitude", latitude);
+        preCheckoutIntent.putExtra("longitude", longitude);
+        startActivity(preCheckoutIntent);
     }
 
 }

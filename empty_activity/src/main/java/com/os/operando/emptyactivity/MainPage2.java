@@ -82,6 +82,17 @@ public class MainPage2 extends Activity {
         getApplicationContext().startActivity(startIntent);
     }
 
+    public void gotoDeliveryMaps(View view)
+    {
+        Intent CurInt = getIntent();
+        ArrayList<String> UserInformation = CurInt.getStringArrayListExtra("UserInformation");
+        Bundle UserBundle =new Bundle();
+        UserBundle.putSerializable("UserInformation", UserInformation);
+        Intent S2intent = new Intent(getApplicationContext(), DeliveryMaps.class);
+        S2intent.putExtras(UserBundle);
+        startActivity(S2intent);
+    }
+
     public void gototc(View view)
     {
         Intent CurInt = getIntent();
